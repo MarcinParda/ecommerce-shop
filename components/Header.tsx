@@ -2,12 +2,13 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Week 2', href: 'week-2' },
+  { name: 'Week 3', href: 'week-3' },
+  { name: 'Week 4', href: 'week-4' },
 ];
 
 function classNames(...classes: string[]) {
@@ -15,6 +16,9 @@ function classNames(...classes: string[]) {
 }
 
 export const Header = () => {
+  const router = useRouter();
+  console.log(router);
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -34,13 +38,17 @@ export const Header = () => {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <Image
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
-                    width={128}
-                    height={32}
-                  />
+                  <Link href="/">
+                    <a>
+                      <Image
+                        className="hidden lg:block h-8 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                        alt="Workflow"
+                        width={128}
+                        height={32}
+                      />
+                    </a>
+                  </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -49,12 +57,14 @@ export const Header = () => {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current
+                          `/${item.href}` === router.asPath
                             ? 'bg-gray-900 text-white'
                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={
+                          `/${item.href}` === router.asPath ? 'page' : undefined
+                        }
                       >
                         {item.name}
                       </a>
