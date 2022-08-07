@@ -6,9 +6,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const navigation = [
-  { name: 'Week 2', href: 'week-2' },
-  { name: 'Week 3', href: 'week-3' },
-  { name: 'Week 4', href: 'week-4' },
+  { name: 'Dashboard', href: '/' },
+  { name: 'Exercises', href: '/exercises' },
 ];
 
 function classNames(...classes: string[]) {
@@ -16,8 +15,7 @@ function classNames(...classes: string[]) {
 }
 
 export const Header = () => {
-  const router = useRouter();
-  console.log(router);
+  const { asPath } = useRouter();
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -38,36 +36,33 @@ export const Header = () => {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <Link href="/">
-                    <a>
-                      <Image
-                        className="hidden lg:block h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                        alt="Workflow"
-                        width={128}
-                        height={32}
-                      />
-                    </a>
-                  </Link>
+                  <Image
+                    className="hidden lg:block h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    alt="Workflow"
+                    width={128}
+                    height={32}
+                  />
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          `/${item.href}` === router.asPath
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={
-                          `/${item.href}` === router.asPath ? 'page' : undefined
-                        }
-                      >
-                        {item.name}
-                      </a>
+                      <Link href={item.href} key={item.name}>
+                        <a
+                          href={item.href}
+                          className={classNames(
+                            item.href === asPath
+                              ? 'bg-gray-900 text-white'
+                              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            'px-3 py-2 rounded-md text-sm font-medium'
+                          )}
+                          aria-current={
+                            item.href === asPath ? 'page' : undefined
+                          }
+                        >
+                          {item.name}
+                        </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -159,12 +154,12 @@ export const Header = () => {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current
+                    item.href === asPath
                       ? 'bg-gray-900 text-white'
                       : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.href === asPath ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
