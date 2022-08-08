@@ -10,6 +10,7 @@ interface Week {
 interface Exercise {
   number: number;
   description: string;
+  href?: string;
 }
 
 const weeks: Week[] = [
@@ -34,6 +35,7 @@ const weeks: Week[] = [
       },
       {
         number: 2,
+        href: '/exercises/week-3/exercise-2/1',
         description:
           'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download the data while building the application (SSG -> getStaticProps, getStaticPaths). You have to take into account that now the page number must be included in the address and passed as a parameter.',
       },
@@ -69,7 +71,10 @@ const ExercisesPage = () => {
                   >
                     <dt className="text-sm font-medium text-blue-500 underline hover:text-blue-700">
                       <Link
-                        href={`exercises/week-${week.number}/exercise-${exercise.number}`}
+                        href={
+                          exercise.href ||
+                          `exercises/week-${week.number}/exercise-${exercise.number}`
+                        }
                       >
                         <a>{`Exercise ${exercise.number}`}</a>
                       </Link>
