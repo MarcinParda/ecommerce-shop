@@ -7,14 +7,14 @@ interface PaginationProps {
   currentPage: number;
   take?: number;
   href?: string;
+  totalCount?: number;
 }
-
-const totalCount = 250;
 
 export default function Pagination({
   currentPage,
   take = DEFAULT_TAKE,
   href,
+  totalCount = 250,
 }: PaginationProps) {
   const paginationRange = usePagination({
     currentPage,

@@ -39,6 +39,12 @@ const weeks: Week[] = [
         description:
           'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download the data while building the application (SSG -> getStaticProps, getStaticPaths). You have to take into account that now the page number must be included in the address and passed as a parameter.',
       },
+      {
+        number: 3,
+        href: '/exercises/week-3/exercise-3/1',
+        description:
+          'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download the data while building the application (SSG -> getStaticProps, getStaticPaths). You have to take into account that now the page number must be included in the address and passed as a parameter. However, there are many products (over 4,000,000). Dont render all of them while building the page!',
+      },
     ],
   },
 ];
