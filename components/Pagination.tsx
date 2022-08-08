@@ -5,12 +5,17 @@ import { usePagination } from '../hooks/usePagination';
 
 interface PaginationProps {
   currentPage: number;
-  take: number;
+  take?: number;
+  href?: string;
 }
 
 const totalCount = 250;
 
-export default function Pagination({ currentPage, take }: PaginationProps) {
+export default function Pagination({
+  currentPage,
+  take = DEFAULT_TAKE,
+  href,
+}: PaginationProps) {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -57,10 +62,14 @@ export default function Pagination({ currentPage, take }: PaginationProps) {
             {paginationRange?.map((label, index) => (
               <Link
                 key={`${label}_${index}`}
-                href={{
-                  pathname: '/exercises/week-3/excercise-1',
-                  query: { page: label },
-                }}
+                href={
+                  href
+                    ? `${href}/${label}`
+                    : {
+                        pathname: '/exercises/week-3/exercise-1',
+                        query: { page: label },
+                      }
+                }
                 aria-current="page"
               >
                 <a

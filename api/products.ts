@@ -1,20 +1,6 @@
 import axios from 'axios';
 import { DEFAULT_TAKE, NASZSKLEP_API_URL } from '../constants/consts';
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: Rating;
-}
-
-interface Rating {
-  rate: number;
-  count: number;
-}
+import { Product } from '../interfaces/product';
 
 export const getProducts = async (page: string | string[]) => {
   const take = DEFAULT_TAKE;
@@ -22,6 +8,6 @@ export const getProducts = async (page: string | string[]) => {
   const res = await axios.get(`${NASZSKLEP_API_URL}/products`, {
     params: { take, offset },
   });
-  const data: Product[] = res.data;
+  const data: Product[] | null = res.data;
   return data;
 };

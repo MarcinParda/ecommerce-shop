@@ -32,6 +32,11 @@ const weeks: Week[] = [
         description:
           'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download data on the client side (CSR -> useQuery).',
       },
+      {
+        number: 2,
+        description:
+          'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download the data while building the application (SSG -> getStaticProps, getStaticPaths). You have to take into account that now the page number must be included in the address and passed as a parameter.',
+      },
     ],
   },
 ];
@@ -64,9 +69,9 @@ const ExercisesPage = () => {
                   >
                     <dt className="text-sm font-medium text-blue-500 underline hover:text-blue-700">
                       <Link
-                        href={`exercises/week-${week.number}/excercise-${exercise.number}`}
+                        href={`exercises/week-${week.number}/exercise-${exercise.number}`}
                       >
-                        <a>{`Excercise ${exercise.number}`}</a>
+                        <a>{`Exercise ${exercise.number}`}</a>
                       </Link>
                     </dt>
                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
