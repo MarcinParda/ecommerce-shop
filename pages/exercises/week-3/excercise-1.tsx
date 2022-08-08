@@ -29,7 +29,18 @@ const getProducts = async (page: string | string[]) => {
   return data;
 };
 
-const AboutPage = () => {
+const Exercise1Page = () => {
+  return (
+    <>
+      <Header />
+      <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <Main />
+      </main>
+    </>
+  );
+};
+
+const Main = () => {
   const router = useRouter();
   const { page = '1' } = router.query;
 
@@ -45,13 +56,7 @@ const AboutPage = () => {
     return <div>Something went wrong.</div>;
   }
 
-  return (
-    <>
-      <Header />
-      <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">Main</main>
-      <Footer />
-    </>
-  );
+  return <div>Main</div>;
 };
 
-export default AboutPage;
+export default Exercise1Page;
