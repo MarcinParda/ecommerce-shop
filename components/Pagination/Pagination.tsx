@@ -1,7 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { DEFAULT_TAKE } from '../constants/consts';
-import { usePagination } from '../hooks/usePagination';
+import { DEFAULT_TAKE } from '../../constants/consts';
+import { usePagination } from './usePagination';
 
 interface PaginationProps {
   currentPage: number;
