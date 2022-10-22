@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { DEFAULT_TAKE } from '../../constants/consts';
+import { DEFAULT_TAKE } from '../../constants';
 import { usePagination } from './usePagination';
 
 interface PaginationProps {

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { DEFAULT_TAKE, NASZSKLEP_API_URL } from '../constants/consts';
+import { DEFAULT_TAKE } from '../constants';
+import { NASZSKLEP_API_URL } from '../constants/api';
 import { Product } from '../interfaces/product';
 
 export const getProducts = async (
