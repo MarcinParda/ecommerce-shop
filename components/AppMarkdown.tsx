@@ -10,8 +10,8 @@ const AppMarkdown = ({ children }: { children: string }) => {
             if (!href) {
               return <a {...props}></a>;
             }
-            if (href.includes(window.location.origin)) {
-              return <a {...props} rel="noopener noreferrer"></a>;
+            if (!href.startsWith('/')) {
+              return <a {...props} href={href} rel="noopener noreferrer"></a>;
             }
             return (
               <Link href={href}>
