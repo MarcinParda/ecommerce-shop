@@ -1,55 +1,9 @@
 import Link from 'next/link';
 import { Header } from '../../components/Header';
-
-interface Week {
-  description: string;
-  number: number;
-  exercises: Exercise[];
-}
-
-interface Exercise {
-  number: number;
-  description: string;
-  href?: string;
-}
-
-const weeks: Week[] = [
-  {
-    description: 'CSS Styling & Tailwind',
-    number: 2,
-    exercises: [
-      {
-        number: 1,
-        description: 'Style your application using ready-made solutions.',
-      },
-    ],
-  },
-  {
-    description: 'Rendering in Next.js',
-    number: 3,
-    exercises: [
-      {
-        number: 1,
-        description:
-          'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download data on the client side (CSR -> useQuery).',
-      },
-      {
-        number: 2,
-        href: '/exercises/week-3/exercise-2/1',
-        description:
-          'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download the data while building the application (SSG -> getStaticProps, getStaticPaths). You have to take into account that now the page number must be included in the address and passed as a parameter.',
-      },
-      {
-        number: 3,
-        href: '/exercises/week-3/exercise-3/1',
-        description:
-          'Using the endpoint https://naszsklep-api.vercel.app/api/products create a pagination component. Download the data while building the application (SSG -> getStaticProps, getStaticPaths). You have to take into account that now the page number must be included in the address and passed as a parameter. However, there are many products (over 4,000,000). Dont render all of them while building the page!',
-      },
-    ],
-  },
-];
+import { repoUrl, weeks } from '../../constants';
 
 const ExercisesPage = () => {
+  const codeHref = (codeHref: string) => `${repoUrl}${codeHref}`;
   return (
     <>
       <Header />
@@ -75,14 +29,20 @@ const ExercisesPage = () => {
                       index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
                     } px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6`}
                   >
-                    <dt className="text-sm font-medium text-blue-500 underline hover:text-blue-700">
+                    <dt className="text-sm font-medium">
                       <Link
                         href={
-                          exercise.href ||
+                          exercise.liveHref ||
                           `exercises/week-${week.number}/exercise-${exercise.number}`
                         }
                       >
-                        <a>{`Exercise ${exercise.number}`}</a>
+                        <a className="text-blue-500 underline hover:text-blue-700">{`Exercise ${exercise.number}`}</a>
+                      </Link>
+                      <Seperator />
+                      <Link href={codeHref(exercise.codeHref)}>
+                        <a className="text-blue-500 underline hover:text-blue-700">
+                          Code
+                        </a>
                       </Link>
                     </dt>
                     <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
@@ -100,3 +60,5 @@ const ExercisesPage = () => {
 };
 
 export default ExercisesPage;
+
+const Seperator = () => <span className="mx-2">|</span>;
