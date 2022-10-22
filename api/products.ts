@@ -13,3 +13,9 @@ export const getProducts = async (
   const data: Product[] | null = res.data;
   return data;
 };
+
+export const getProduct = async (id: string | string[]) => {
+  const res = await axios.get(`${NASZSKLEP_API_URL}/products/${id}`);
+  const data: Product | null = res.data;
+  return data;
+};

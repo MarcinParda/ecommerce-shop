@@ -3,9 +3,12 @@ export interface Product {
   title: string;
   price: number;
   description: string;
+  longDescription: string;
   category: string;
   image: string;
   rating: Rating;
+  thumbnailUrl: string;
+  thumbnailAlt: string;
 }
 
 interface Rating {
