@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { DOTS } from '../../constants';
+import { DOTS } from '../../consts';
 
 interface Props {
   totalCount: number;

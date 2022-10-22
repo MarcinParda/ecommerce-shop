@@ -1,10 +1,10 @@
+import { getProducts } from 'api/products';
+import { Header } from 'components/Header';
+import Pagination from 'components/Pagination/Pagination';
+import Product from 'components/Product';
+import { InferGetStaticPaths } from 'interfaces';
 import { InferGetServerSidePropsType } from 'next';
 import { useRouter } from 'next/router';
-import { getProducts } from '../../../../api/products';
-import { Header } from '../../../../components/Header';
-import Pagination from '../../../../components/Pagination/Pagination';
-import Product from '../../../../components/Product';
-import { InferGetStaticPaths } from '../../../../interfaces';
 
 const Exercise2Page = ({
   data,

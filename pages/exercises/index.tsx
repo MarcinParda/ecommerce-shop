@@ -1,6 +1,6 @@
+import { Header } from 'components/Header';
+import { repoUrl, weeks } from 'consts';
 import Link from 'next/link';
-import { Header } from '../../components/Header';
-import { repoUrl, weeks } from '../../constants';
 
 const ExercisesPage = () => {
   const codeHref = (codeHref: string) => `${repoUrl}${codeHref}`;
