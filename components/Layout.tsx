@@ -1,14 +1,17 @@
+import { ReactNode } from 'react';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-const Layout = () => {
+interface Props {
+  children: ReactNode;
+}
+
+export const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <main>Właściwa zawartość</main>
+      <div className="flex-grow">{children}</div>
       <Footer />
     </>
   );
 };
-
-export default Layout;

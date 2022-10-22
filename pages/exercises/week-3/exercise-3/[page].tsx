@@ -15,7 +15,6 @@ const Exercise2Page = ({
   if (!products) {
     return (
       <>
-        <Header />
         <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           Something went wrong.
         </main>
@@ -25,7 +24,6 @@ const Exercise2Page = ({
 
   return (
     <>
-      <Header />
       <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <header>
           <h2 className="text-4xl py-8 lg:py-12 text-center">Products</h2>
