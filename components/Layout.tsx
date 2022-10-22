@@ -8,10 +8,12 @@ interface Props {
 
 export const Layout = ({ children }: Props) => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex-grow">{children}</div>
+      <main className="flex flex-col flex-1 items-center justify-center">
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
