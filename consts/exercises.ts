@@ -38,6 +38,18 @@ export const weeks: Week[] = [
       },
     ],
   },
+  {
+    description: 'Organizacja pracy, SEO i Markdown',
+    number: 5,
+    exercises: [
+      {
+        number: 1,
+        codeHref: '/pages/exercises/week-5/exercise-1.tsx',
+        description:
+          'Zadanie 1 & 2. Popraw components przekazywane do markdowna tak, aby Nie opakowywać linków prowadzących do zewnętrznych stron w komponent <Link> Dodać do linków zewnętrznych atrybuty rel=noopener noreferrer',
+      },
+    ],
+  },
 ];
 
 export const repoUrl =
