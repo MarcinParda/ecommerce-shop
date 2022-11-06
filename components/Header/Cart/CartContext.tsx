@@ -7,6 +7,7 @@ interface CartItem {
 
 interface CartState {
   items: CartItem[];
+  // addItemToCart: () => void;
 }
 
 export const CartStateContext = createContext<CartState | null>(null);
