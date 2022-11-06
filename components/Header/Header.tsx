@@ -9,7 +9,7 @@ import {
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import CartBar from './CartBar';
+import CartBar from './Cart/CartBar';
 
 const navigation = [
   { name: 'Dashboard', href: '/' },

@@ -3,18 +3,6 @@ import IconWithBadge from 'components/IconWithBadge';
 import Link from 'next/link';
 import { useState } from 'react';
 
-interface CartItem {
-  price: number;
-  title: string;
-}
-
-const initialCartState: CartItem[] = [
-  {
-    price: 42,
-    title: 'Universe',
-  },
-];
-
 const CartBar = () => {
   const [cart, setCart] = useState<CartItem[]>(initialCartState);
   return (
