@@ -1,6 +1,6 @@
 interface Props {
   icon: JSX.Element;
-  badgeNumber: number;
+  badgeNumber?: number;
   badgeBgColorClass?: string;
 }
 
@@ -9,11 +9,13 @@ const IconWithBadge = ({ icon, badgeNumber, badgeBgColorClass }: Props) => {
   return (
     <div className="relative">
       {icon}
-      <div
-        className={` inline-flex absolute -top-1 -right-1 justify-center items-center w-4 h-4 text-xs font-bold text-white rounded-full ${bgColor}`}
-      >
-        {badgeNumber}
-      </div>
+      {!!badgeNumber && (
+        <div
+          className={`inline-flex absolute -top-1 -right-1 justify-center items-center w-4 h-4 text-xs font-bold text-white rounded-full ${bgColor}`}
+        >
+          {badgeNumber}
+        </div>
+      )}
     </div>
   );
 };
