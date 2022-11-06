@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { getProducts } from 'api/products';
-import { Header } from 'components/Header';
+import { Header } from 'components/Header/Header';
 import Pagination from 'components/Pagination/Pagination';
 import Product from 'components/Product';
 import { DEFAULT_TAKE } from 'consts';

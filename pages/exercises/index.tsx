@@ -1,4 +1,4 @@
-import { Header } from 'components/Header';
+import { Header } from 'components/Header/Header';
 import { repoUrl, weeks } from 'consts';
 import Link from 'next/link';
 
