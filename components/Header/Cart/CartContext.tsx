@@ -38,7 +38,6 @@ export const CartStateContextProvider = ({
     <CartStateContext.Provider
       value={{
         items: cartItems,
-        // TODO: Refactor those functions
         addItemToCart: (item) => {
           setCartItems((prevState) => {
             if (!prevState) {
