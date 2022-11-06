@@ -11,7 +11,9 @@ const CartContent = () => {
             key={`${item.title}_${index}`}
             className="py-4 flex justify-between"
           >
-            <div>{item.title}</div>
+            <div>
+              {item.count} x {item.title}
+            </div>
             <div className="flex align-middle">
               {item.price}$
               <button className="ml-2 text-red-500">

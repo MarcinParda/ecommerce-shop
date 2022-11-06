@@ -1,13 +1,14 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
 interface CartItem {
-  price: number;
-  title: string;
+  readonly price: number;
+  readonly title: string;
+  readonly count: number;
 }
 
 interface CartState {
-  items: CartItem[];
-  addItemToCart: (item: CartItem) => void;
+  readonly items: readonly CartItem[];
+  readonly addItemToCart: (item: CartItem) => void;
 }
 
 export const CartStateContext = createContext<CartState | null>(null);
@@ -24,7 +25,19 @@ export const CartStateContextProvider = ({
       value={{
         items: cartItems,
         addItemToCart: (item) => {
-          setCartItems((prevState) => [...prevState, item]);
+          setCartItems((prevState) => {
+            const existingItem = prevState.find(
+              (existingItem) => existingItem.title === item.title
+            );
+            if (!existingItem) {
+              return [...prevState, item];
+            }
+            return prevState.map((existingItem) => {
+              return existingItem.title === item.title
+                ? { ...existingItem, count: existingItem.count + 1 }
+                : existingItem;
+            });
+          });
         },
       }}
     >
