@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { useCartState } from './Header/Cart/CartContext';
 
 interface Props {
   image: string;
@@ -8,8 +9,9 @@ interface Props {
 }
 
 export default function Product({ image, price, title }: Props) {
+  const cartState = useCartState();
   return (
-    <>
+    <div className="flex flex-col">
       <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
         <Image
           src={image}
@@ -22,6 +24,12 @@ export default function Product({ image, price, title }: Props) {
       </div>
       <h3 className="mt-4 text-sm text-gray-700">{title}</h3>
       <p className="mt-1 text-lg font-medium text-gray-900">${price}</p>
-    </>
+      <button
+        onClick={() => cartState.addItemToCart({ price, title })}
+        className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 mt-2 border border-gray-400 rounded shadow"
+      >
+        Dodaj do koszyka
+      </button>
+    </div>
   );
 }
