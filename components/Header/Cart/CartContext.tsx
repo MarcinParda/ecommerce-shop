@@ -1,14 +1,15 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
-
-interface CartItem {
-  readonly id: number;
-  readonly price: number;
-  readonly title: string;
-  readonly count: number;
-}
+import { CartItem } from 'interfaces';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { getCartItemsFromStorage, setCartItemsInStorage } from './cartModel';
 
 interface CartState {
-  readonly items: readonly CartItem[];
+  readonly items: readonly CartItem[] | undefined;
   readonly addItemToCart: (item: CartItem) => void;
   readonly removeItemFromCart: (id: CartItem['id']) => void;
 }
@@ -20,14 +21,29 @@ export const CartStateContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[] | undefined>(undefined);
+
+  useEffect(() => {
+    setCartItems(getCartItemsFromStorage());
+  }, []);
+
+  useEffect(() => {
+    if (cartItems === undefined) {
+      return;
+    }
+    setCartItemsInStorage(cartItems);
+  }, [cartItems]);
 
   return (
     <CartStateContext.Provider
       value={{
         items: cartItems,
+        // TODO: Refactor those functions
         addItemToCart: (item) => {
           setCartItems((prevState) => {
+            if (!prevState) {
+              return [item];
+            }
             const existingItem = prevState.find(
               (existingItem) => existingItem.id === item.id
             );
@@ -43,6 +59,9 @@ export const CartStateContextProvider = ({
         },
         removeItemFromCart: (id) => {
           setCartItems((prevState) => {
+            if (!prevState) {
+              return [];
+            }
             const existingItem = prevState.find((element) => element.id === id);
             if (existingItem && existingItem.count <= 1) {
               return prevState.filter((existingItem) => existingItem.id !== id);
