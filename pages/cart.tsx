@@ -5,9 +5,9 @@ const CartContent = () => {
   const cartState = useCartState();
   return (
     <div className="col-span-2">
-      <ul className="divide-y divide-gray-200">
-        {cartState.items &&
-          cartState.items.map((item, index) => (
+      {cartState.items && cartState.items.length > 0 ? (
+        <ul className="divide-y divide-gray-200">
+          {cartState.items.map((item, index) => (
             <li
               key={`${item.title}_${index}`}
               className="py-4 flex justify-between"
@@ -26,7 +26,10 @@ const CartContent = () => {
               </div>
             </li>
           ))}
-      </ul>
+        </ul>
+      ) : (
+        'Brak produktów w koszyku'
+      )}
     </div>
   );
 };
