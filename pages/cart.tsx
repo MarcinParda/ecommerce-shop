@@ -16,7 +16,10 @@ const CartContent = () => {
             </div>
             <div className="flex align-middle">
               {item.price}$
-              <button className="ml-2 text-red-500">
+              <button
+                className="ml-2 text-red-500"
+                onClick={() => cartState.removeItemFromCart(item.id)}
+              >
                 <TrashIcon className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
