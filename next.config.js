@@ -7,6 +7,7 @@ const nextConfig = {
       'tailwindui.com',
       'images.unsplash.com',
       'naszsklep-api.vercel.app',
+      'media.graphassets.com',
     ],
   },
 };

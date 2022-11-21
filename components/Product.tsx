@@ -6,7 +6,7 @@ interface Props {
   image: string;
   title: string;
   price: number;
-  id: number;
+  id: number | string;
 }
 
 export default function Product({ image, price, title, id }: Props) {

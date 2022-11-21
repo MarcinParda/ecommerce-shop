@@ -50,6 +50,18 @@ export const weeks: Week[] = [
       },
     ],
   },
+  {
+    description: 'GraphQL',
+    number: 7,
+    exercises: [
+      {
+        number: 1,
+        codeHref: '/pages/exercises/week-7/exercise-1.tsx',
+        description:
+          'Korzystając z GraphQL, pobierz i wyświetl listę produktów w swojej aplikacji. Następnie, pobierz i wyświetl widok pojedynczego produktu.',
+      },
+    ],
+  },
 ];
 
 export const repoUrl =

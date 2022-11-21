@@ -1,5 +1,4 @@
 import { getProducts } from 'api/products';
-import { Header } from 'components/Header/Header';
 import Pagination from 'components/Pagination/Pagination';
 import Product from 'components/Product';
 import { InferGetStaticPaths } from 'interfaces';
