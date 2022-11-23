@@ -5,8 +5,9 @@ specifiers:
   '@graphql-codegen/cli': ^2.13.12
   '@graphql-codegen/client-preset': 1.1.4
   '@graphql-codegen/introspection': 2.2.1
-  '@headlessui/react': ^1.6.6
+  '@headlessui/react': ^1.7.3
   '@heroicons/react': ^1.0.6
+  '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.7
   '@tanstack/react-query': ^4.0.10
   '@types/node': 18.0.6
@@ -28,8 +29,6 @@ specifiers:
 dependencies:
   '@apollo/client': 3.7.1_gdcq4dv6opitr3wbfwyjmanyra
   '@graphql-codegen/cli': 2.13.12_fli6r5b6payadwte7d5efeewai
-  '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
-  '@heroicons/react': 1.0.6_react@18.2.0
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   '@tanstack/react-query': 4.13.0_biqbaboplfbrettd7655fr4n2y
   axios: 0.27.2
@@ -42,6 +41,9 @@ dependencies:
 devDependencies:
   '@graphql-codegen/client-preset': 1.1.4_graphql@16.6.0
   '@graphql-codegen/introspection': 2.2.1_graphql@16.6.0
+  '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
+  '@heroicons/react': 1.0.6_react@18.2.0
+  '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.1
   '@types/node': 18.0.6
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
@@ -1330,7 +1332,7 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-    dev: false
+    dev: true
 
   /@heroicons/react/1.0.6_react@18.2.0:
     resolution: {integrity: sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==}
@@ -1338,7 +1340,7 @@ packages:
       react: '>= 16'
     dependencies:
       react: 18.2.0
-    dev: false
+    dev: true
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
@@ -1583,6 +1585,15 @@ packages:
     dependencies:
       tslib: 2.4.0
     dev: false
+
+  /@tailwindcss/forms/0.5.3_tailwindcss@3.2.1:
+    resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.2.1_postcss@8.4.18
+    dev: true
 
   /@tailwindcss/typography/0.5.7_tailwindcss@3.2.1:
     resolution: {integrity: sha512-JTTSTrgZfp6Ki4svhPA4mkd9nmQ/j9EfE7SbHJ1cLtthKkpW2OxsFXzSmxbhYbEkfNIyAyhle5p4SYyKRbz/jg==}
@@ -4171,6 +4182,11 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: true
+
   /minimatch/3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
@@ -4675,7 +4691,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -4716,7 +4731,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -4902,7 +4916,6 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /scuid/1.1.0:
     resolution: {integrity: sha512-MuCAyrGZcTLfQoH2XoBlQ8C6bzwN88XT/0slOGz0pn8+gIP85BOAfYa44ZXQUTOwRwPU0QvgU+V+OSajl/59Xg==}
