@@ -1,4 +1,3 @@
-import { gql, useQuery } from '@apollo/client';
 import Product from 'components/Product';
 import {
   GetProductsListDocument,

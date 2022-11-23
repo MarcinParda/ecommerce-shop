@@ -5,6 +5,7 @@ specifiers:
   '@graphql-codegen/cli': ^2.13.12
   '@graphql-codegen/client-preset': 1.1.4
   '@graphql-codegen/introspection': 2.2.1
+  '@graphql-typed-document-node/core': ^3.1.1
   '@headlessui/react': ^1.7.3
   '@heroicons/react': ^1.0.6
   '@hookform/resolvers': ^2.9.10
@@ -32,6 +33,7 @@ specifiers:
 dependencies:
   '@apollo/client': 3.7.1_gdcq4dv6opitr3wbfwyjmanyra
   '@graphql-codegen/cli': 2.13.12_fli6r5b6payadwte7d5efeewai
+  '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
   '@hookform/resolvers': 2.9.10_react-hook-form@7.39.5
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   '@tanstack/react-query': 4.13.0_biqbaboplfbrettd7655fr4n2y
