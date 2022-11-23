@@ -25,8 +25,10 @@ export const Input = ({
           className={`shadow appearance-none border ${
             !!errorMessage ? 'border-red-500' : 'border-gray-600'
           } rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline`}
-          {...register(name)}
           {...rest}
+          {...register(name)}
+          name={name}
+          id={name}
         />
       </label>
       <label className="text-red-500 text-xs italic inline-block">

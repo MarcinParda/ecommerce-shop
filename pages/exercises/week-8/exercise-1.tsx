@@ -1,4 +1,3 @@
-import { Form } from 'components/Form';
 import { Input } from 'components/Input';
 import { FormValues } from 'interfaces';
 import { useForm } from 'react-hook-form';
@@ -10,12 +9,14 @@ const Exercise1Page = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<FormValues>({
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     console.log(data);
+    reset();
   };
 
   return (
@@ -23,7 +24,7 @@ const Exercise1Page = () => {
       <header>
         <h2 className="text-4xl py-8 lg:py-12 text-center">Input</h2>
       </header>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           name="firstName"
           label="Imię"
@@ -38,7 +39,7 @@ const Exercise1Page = () => {
         >
           Submit
         </button>
-      </Form>
+      </form>
     </main>
   );
 };
