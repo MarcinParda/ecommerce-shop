@@ -7,6 +7,7 @@ specifiers:
   '@graphql-codegen/introspection': 2.2.1
   '@headlessui/react': ^1.7.3
   '@heroicons/react': ^1.0.6
+  '@hookform/resolvers': ^2.9.10
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.7
   '@tanstack/react-query': ^4.0.10
@@ -22,13 +23,16 @@ specifiers:
   postcss: ^8.4.14
   react: 18.2.0
   react-dom: 18.2.0
+  react-hook-form: ^7.39.5
   react-markdown: ^8.0.3
   tailwindcss: ^3.1.6
   typescript: 4.7.4
+  yup: ^0.32.11
 
 dependencies:
   '@apollo/client': 3.7.1_gdcq4dv6opitr3wbfwyjmanyra
   '@graphql-codegen/cli': 2.13.12_fli6r5b6payadwte7d5efeewai
+  '@hookform/resolvers': 2.9.10_react-hook-form@7.39.5
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   '@tanstack/react-query': 4.13.0_biqbaboplfbrettd7655fr4n2y
   axios: 0.27.2
@@ -51,8 +55,10 @@ devDependencies:
   eslint: 8.20.0
   eslint-config-next: 12.2.3_he2ccbldppg44uulnyq4rwocfa
   postcss: 8.4.18
+  react-hook-form: 7.39.5_react@18.2.0
   tailwindcss: 3.2.1_postcss@8.4.18
   typescript: 4.7.4
+  yup: 0.32.11
 
 packages:
 
@@ -1342,6 +1348,14 @@ packages:
       react: 18.2.0
     dev: true
 
+  /@hookform/resolvers/2.9.10_react-hook-form@7.39.5:
+    resolution: {integrity: sha512-JIL1DgJIlH9yuxcNGtyhsWX/PgNltz+5Gr6+8SX9fhXc/hPbEIk6wPI82nhgvp3uUb6ZfAM5mqg/x7KR7NAb+A==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.39.5_react@18.2.0
+    dev: false
+
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
     engines: {node: '>=10.10.0'}
@@ -1679,6 +1693,10 @@ packages:
     dependencies:
       '@types/node': 18.0.6
     dev: false
+
+  /@types/lodash/4.14.190:
+    resolution: {integrity: sha512-5iJ3FBJBvQHQ8sFhEhJfjUP+G+LalhavTkYyrAYqz5MEJG+erSv0k9KJLb6q7++17Lafk1scaTIFXcMJlwK8Mw==}
+    dev: true
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -3833,6 +3851,10 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: true
+
   /lodash.castarray/4.4.0:
     resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
     dev: false
@@ -4227,6 +4249,10 @@ packages:
   /mute-stream/0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: false
+
+  /nanoclone/0.2.1:
+    resolution: {integrity: sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==}
+    dev: true
 
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
@@ -4656,6 +4682,10 @@ packages:
       object-assign: 4.1.1
       react-is: 16.13.1
 
+  /property-expr/2.0.5:
+    resolution: {integrity: sha512-IJUkICM5dP5znhCckHSv30Q4b5/JA5enCtkRHYaOVOAocnH/1BQEYTC5NMfT3AVl/iXKdr3aqQbQn9DxyWknwA==}
+    dev: true
+
   /property-information/6.1.1:
     resolution: {integrity: sha512-hrzC564QIl0r0vy4l6MvRLhafmUowhO/O3KgVSoXIbbA2Sz4j8HGpJc6T2cubRVwMwpdiG/vKGfhT4IixmKN9w==}
     dev: false
@@ -4691,6 +4721,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-hook-form/7.39.5_react@18.2.0:
+    resolution: {integrity: sha512-OE0HKyz5IPc6svN2wd+e+evidZrw4O4WZWAWYzQVZuHi+hYnHFSLnxOq0ddjbdmaLIsLHut/ab7j72y2QT3+KA==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -5206,6 +5244,10 @@ packages:
     dependencies:
       is-number: 7.0.0
 
+  /toposort/2.0.2:
+    resolution: {integrity: sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==}
+    dev: true
+
   /tr46/0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
@@ -5650,6 +5692,19 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: false
+
+  /yup/0.32.11:
+    resolution: {integrity: sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg==}
+    engines: {node: '>=10'}
+    dependencies:
+      '@babel/runtime': 7.19.4
+      '@types/lodash': 4.14.190
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      nanoclone: 0.2.1
+      property-expr: 2.0.5
+      toposort: 2.0.2
+    dev: true
 
   /zen-observable-ts/1.2.5:
     resolution: {integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==}

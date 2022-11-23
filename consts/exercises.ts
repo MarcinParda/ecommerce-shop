@@ -62,6 +62,18 @@ export const weeks: Week[] = [
       },
     ],
   },
+  {
+    description: 'Formularze',
+    number: 8,
+    exercises: [
+      {
+        number: 1,
+        codeHref: '/pages/exercises/week-8/exercise-1.tsx',
+        description:
+          'Stwórz reużywalny komponent Input, który pozwoli na uniknięcie powielania kodu. Taki komponent powinien zawierać w sobie label, input oraz informacje o błędzie jeśli takowy się pojawi. Zaimplementuj to tak, aby Twój komponent poprawnie działał z React Hook Form.',
+      },
+    ],
+  },
 ];
 
 export const repoUrl =
