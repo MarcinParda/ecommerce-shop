@@ -72,6 +72,12 @@ export const weeks: Week[] = [
         description:
           'Stwórz reużywalny komponent Input, który pozwoli na uniknięcie powielania kodu. Taki komponent powinien zawierać w sobie label, input oraz informacje o błędzie jeśli takowy się pojawi. Zaimplementuj to tak, aby Twój komponent poprawnie działał z React Hook Form.',
       },
+      {
+        number: 2,
+        codeHref: '/pages/exercises/week-8/exercise-1.tsx',
+        description:
+          'Korzystając z yup, dodaj walidację do swojego formularza. Następnie przetłumacz błędy na język polski i skonfiguruj yup tak, aby wyświetlały się Twoje tłumaczenia zamiast oryginałów po angielsku.',
+      },
     ],
   },
 ];
