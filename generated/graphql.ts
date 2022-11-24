@@ -2,15 +2,9 @@
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -83,15 +77,18 @@ export type Asset = Node & {
   width?: Maybe<Scalars['Float']>;
 };
 
+
 /** Asset system model */
 export type AssetCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Asset system model */
 export type AssetCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Asset system model */
 export type AssetDocumentInStagesArgs = {
@@ -100,6 +97,7 @@ export type AssetDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 /** Asset system model */
 export type AssetHistoryArgs = {
   limit?: Scalars['Int'];
@@ -107,11 +105,13 @@ export type AssetHistoryArgs = {
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 /** Asset system model */
 export type AssetLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
+
 
 /** Asset system model */
 export type AssetProductImagesArgs = {
@@ -125,15 +125,18 @@ export type AssetProductImagesArgs = {
   where?: InputMaybe<ProductWhereInput>;
 };
 
+
 /** Asset system model */
 export type AssetPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Asset system model */
 export type AssetPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Asset system model */
 export type AssetScheduledInArgs = {
@@ -146,15 +149,18 @@ export type AssetScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 /** Asset system model */
 export type AssetUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Asset system model */
 export type AssetUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Asset system model */
 export type AssetUrlArgs = {
@@ -345,7 +351,7 @@ export enum AssetOrderByInput {
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC',
   WidthAsc = 'width_ASC',
-  WidthDesc = 'width_DESC',
+  WidthDesc = 'width_DESC'
 }
 
 /** Transformations for Assets */
@@ -741,15 +747,18 @@ export type Category = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Category of products, e.g. Menswear. */
 export type CategoryDocumentInStagesArgs = {
@@ -758,6 +767,7 @@ export type CategoryDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryHistoryArgs = {
   limit?: Scalars['Int'];
@@ -765,11 +775,13 @@ export type CategoryHistoryArgs = {
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
+
 
 /** Category of products, e.g. Menswear. */
 export type CategoryProductsArgs = {
@@ -783,15 +795,18 @@ export type CategoryProductsArgs = {
   where?: InputMaybe<ProductWhereInput>;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Category of products, e.g. Menswear. */
 export type CategoryScheduledInArgs = {
@@ -804,10 +819,12 @@ export type CategoryScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 /** Category of products, e.g. Menswear. */
 export type CategoryUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 /** Category of products, e.g. Menswear. */
 export type CategoryUpdatedByArgs = {
@@ -989,7 +1006,7 @@ export enum CategoryOrderByInput {
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type CategoryUpdateInput = {
@@ -1316,15 +1333,18 @@ export type Collection = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionDocumentInStagesArgs = {
@@ -1333,6 +1353,7 @@ export type CollectionDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionHistoryArgs = {
   limit?: Scalars['Int'];
@@ -1340,11 +1361,13 @@ export type CollectionHistoryArgs = {
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
+
 
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionProductsArgs = {
@@ -1358,15 +1381,18 @@ export type CollectionProductsArgs = {
   where?: InputMaybe<ProductWhereInput>;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionScheduledInArgs = {
@@ -1379,10 +1405,12 @@ export type CollectionScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 /** Collection of products, e.g. Winter Sale. */
 export type CollectionUpdatedByArgs = {
@@ -1564,7 +1592,7 @@ export enum CollectionOrderByInput {
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type CollectionUpdateInput = {
@@ -1910,9 +1938,11 @@ export type Currency = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type CurrencyCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type CurrencyDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -1920,15 +1950,18 @@ export type CurrencyDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type CurrencyHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 export type CurrencyPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type CurrencyScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -1939,6 +1972,7 @@ export type CurrencyScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
+
 
 export type CurrencyUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -2128,7 +2162,7 @@ export enum CurrencyOrderByInput {
   RateAsc = 'rate_ASC',
   RateDesc = 'rate_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type CurrencyUpdateInput = {
@@ -2366,7 +2400,7 @@ export enum DocumentFileTypes {
   Txt = 'txt',
   Webp = 'webp',
   Xls = 'xls',
-  Xlsx = 'xlsx',
+  Xlsx = 'xlsx'
 }
 
 export type DocumentOutputInput = {
@@ -2422,7 +2456,7 @@ export enum ImageFit {
   /** Resizes the image to fit within the parameters, but as opposed to 'fit:clip' will not scale the image if the image is smaller than the output size. */
   Max = 'max',
   /** Resizes the image to fit the specified parameters exactly by scaling the image to the desired size. The aspect ratio of the image is not respected and the image can be distorted using this method. */
-  Scale = 'scale',
+  Scale = 'scale'
 }
 
 export type ImageResizeInput = {
@@ -2444,7 +2478,7 @@ export type ImageTransformationInput = {
 export enum Locale {
   De = 'de',
   /** System locale */
-  En = 'en',
+  En = 'en'
 }
 
 /** Representing a geolocation point with latitude and longitude */
@@ -2454,6 +2488,7 @@ export type Location = {
   latitude: Scalars['Float'];
   longitude: Scalars['Float'];
 };
+
 
 /** Representing a geolocation point with latitude and longitude */
 export type LocationDistanceArgs = {
@@ -2965,73 +3000,91 @@ export type Mutation = {
   upsertReview?: Maybe<Review>;
 };
 
+
 export type MutationCreateAssetArgs = {
   data: AssetCreateInput;
 };
+
 
 export type MutationCreateCategoryArgs = {
   data: CategoryCreateInput;
 };
 
+
 export type MutationCreateCollectionArgs = {
   data: CollectionCreateInput;
 };
+
 
 export type MutationCreateCurrencyArgs = {
   data: CurrencyCreateInput;
 };
 
+
 export type MutationCreateOrderArgs = {
   data: OrderCreateInput;
 };
+
 
 export type MutationCreateOrderItemArgs = {
   data: OrderItemCreateInput;
 };
 
+
 export type MutationCreateProductArgs = {
   data: ProductCreateInput;
 };
+
 
 export type MutationCreateProductColorVariantArgs = {
   data: ProductColorVariantCreateInput;
 };
 
+
 export type MutationCreateProductSizeColorVariantArgs = {
   data: ProductSizeColorVariantCreateInput;
 };
+
 
 export type MutationCreateProductSizeVariantArgs = {
   data: ProductSizeVariantCreateInput;
 };
 
+
 export type MutationCreateReviewArgs = {
   data: ReviewCreateInput;
 };
+
 
 export type MutationCreateScheduledReleaseArgs = {
   data: ScheduledReleaseCreateInput;
 };
 
+
 export type MutationDeleteAssetArgs = {
   where: AssetWhereUniqueInput;
 };
+
 
 export type MutationDeleteCategoryArgs = {
   where: CategoryWhereUniqueInput;
 };
 
+
 export type MutationDeleteCollectionArgs = {
   where: CollectionWhereUniqueInput;
 };
+
 
 export type MutationDeleteCurrencyArgs = {
   where: CurrencyWhereUniqueInput;
 };
 
+
 export type MutationDeleteManyAssetsArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
+
 
 export type MutationDeleteManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3042,9 +3095,11 @@ export type MutationDeleteManyAssetsConnectionArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
 
+
 export type MutationDeleteManyCategoriesArgs = {
   where?: InputMaybe<CategoryManyWhereInput>;
 };
+
 
 export type MutationDeleteManyCategoriesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3055,9 +3110,11 @@ export type MutationDeleteManyCategoriesConnectionArgs = {
   where?: InputMaybe<CategoryManyWhereInput>;
 };
 
+
 export type MutationDeleteManyCollectionsArgs = {
   where?: InputMaybe<CollectionManyWhereInput>;
 };
+
 
 export type MutationDeleteManyCollectionsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3068,9 +3125,11 @@ export type MutationDeleteManyCollectionsConnectionArgs = {
   where?: InputMaybe<CollectionManyWhereInput>;
 };
 
+
 export type MutationDeleteManyCurrenciesArgs = {
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
+
 
 export type MutationDeleteManyCurrenciesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3081,9 +3140,11 @@ export type MutationDeleteManyCurrenciesConnectionArgs = {
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
 
+
 export type MutationDeleteManyOrderItemsArgs = {
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
+
 
 export type MutationDeleteManyOrderItemsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3094,9 +3155,11 @@ export type MutationDeleteManyOrderItemsConnectionArgs = {
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
 
+
 export type MutationDeleteManyOrdersArgs = {
   where?: InputMaybe<OrderManyWhereInput>;
 };
+
 
 export type MutationDeleteManyOrdersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3107,9 +3170,11 @@ export type MutationDeleteManyOrdersConnectionArgs = {
   where?: InputMaybe<OrderManyWhereInput>;
 };
 
+
 export type MutationDeleteManyProductColorVariantsArgs = {
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
 };
+
 
 export type MutationDeleteManyProductColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3120,9 +3185,11 @@ export type MutationDeleteManyProductColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
 };
 
+
 export type MutationDeleteManyProductSizeColorVariantsArgs = {
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
 };
+
 
 export type MutationDeleteManyProductSizeColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3133,9 +3200,11 @@ export type MutationDeleteManyProductSizeColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
 };
 
+
 export type MutationDeleteManyProductSizeVariantsArgs = {
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
 };
+
 
 export type MutationDeleteManyProductSizeVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3146,9 +3215,11 @@ export type MutationDeleteManyProductSizeVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
 };
 
+
 export type MutationDeleteManyProductsArgs = {
   where?: InputMaybe<ProductManyWhereInput>;
 };
+
 
 export type MutationDeleteManyProductsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3159,9 +3230,11 @@ export type MutationDeleteManyProductsConnectionArgs = {
   where?: InputMaybe<ProductManyWhereInput>;
 };
 
+
 export type MutationDeleteManyReviewsArgs = {
   where?: InputMaybe<ReviewManyWhereInput>;
 };
+
 
 export type MutationDeleteManyReviewsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3172,41 +3245,51 @@ export type MutationDeleteManyReviewsConnectionArgs = {
   where?: InputMaybe<ReviewManyWhereInput>;
 };
 
+
 export type MutationDeleteOrderArgs = {
   where: OrderWhereUniqueInput;
 };
+
 
 export type MutationDeleteOrderItemArgs = {
   where: OrderItemWhereUniqueInput;
 };
 
+
 export type MutationDeleteProductArgs = {
   where: ProductWhereUniqueInput;
 };
+
 
 export type MutationDeleteProductColorVariantArgs = {
   where: ProductColorVariantWhereUniqueInput;
 };
 
+
 export type MutationDeleteProductSizeColorVariantArgs = {
   where: ProductSizeColorVariantWhereUniqueInput;
 };
+
 
 export type MutationDeleteProductSizeVariantArgs = {
   where: ProductSizeVariantWhereUniqueInput;
 };
 
+
 export type MutationDeleteReviewArgs = {
   where: ReviewWhereUniqueInput;
 };
+
 
 export type MutationDeleteScheduledOperationArgs = {
   where: ScheduledOperationWhereUniqueInput;
 };
 
+
 export type MutationDeleteScheduledReleaseArgs = {
   where: ScheduledReleaseWhereUniqueInput;
 };
+
 
 export type MutationPublishAssetArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3216,6 +3299,7 @@ export type MutationPublishAssetArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishCategoryArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3223,6 +3307,7 @@ export type MutationPublishCategoryArgs = {
   where: CategoryWhereUniqueInput;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishCollectionArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3232,10 +3317,12 @@ export type MutationPublishCollectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishCurrencyArgs = {
   to?: Array<Stage>;
   where: CurrencyWhereUniqueInput;
 };
+
 
 export type MutationPublishManyAssetsArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3244,6 +3331,7 @@ export type MutationPublishManyAssetsArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3259,6 +3347,7 @@ export type MutationPublishManyAssetsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyCategoriesArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3266,6 +3355,7 @@ export type MutationPublishManyCategoriesArgs = {
   where?: InputMaybe<CategoryManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyCategoriesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3281,6 +3371,7 @@ export type MutationPublishManyCategoriesConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyCollectionsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3288,6 +3379,7 @@ export type MutationPublishManyCollectionsArgs = {
   where?: InputMaybe<CollectionManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyCollectionsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3303,10 +3395,12 @@ export type MutationPublishManyCollectionsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyCurrenciesArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
+
 
 export type MutationPublishManyCurrenciesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3319,10 +3413,12 @@ export type MutationPublishManyCurrenciesConnectionArgs = {
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
 
+
 export type MutationPublishManyOrderItemsArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
+
 
 export type MutationPublishManyOrderItemsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3335,10 +3431,12 @@ export type MutationPublishManyOrderItemsConnectionArgs = {
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
 
+
 export type MutationPublishManyOrdersArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<OrderManyWhereInput>;
 };
+
 
 export type MutationPublishManyOrdersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3351,6 +3449,7 @@ export type MutationPublishManyOrdersConnectionArgs = {
   where?: InputMaybe<OrderManyWhereInput>;
 };
 
+
 export type MutationPublishManyProductColorVariantsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3358,6 +3457,7 @@ export type MutationPublishManyProductColorVariantsArgs = {
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyProductColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3373,6 +3473,7 @@ export type MutationPublishManyProductColorVariantsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyProductSizeColorVariantsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3380,6 +3481,7 @@ export type MutationPublishManyProductSizeColorVariantsArgs = {
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyProductSizeColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3395,6 +3497,7 @@ export type MutationPublishManyProductSizeColorVariantsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyProductSizeVariantsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3402,6 +3505,7 @@ export type MutationPublishManyProductSizeVariantsArgs = {
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyProductSizeVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3417,6 +3521,7 @@ export type MutationPublishManyProductSizeVariantsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyProductsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3424,6 +3529,7 @@ export type MutationPublishManyProductsArgs = {
   where?: InputMaybe<ProductManyWhereInput>;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishManyProductsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3439,10 +3545,12 @@ export type MutationPublishManyProductsConnectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishManyReviewsArgs = {
   to?: Array<Stage>;
   where?: InputMaybe<ReviewManyWhereInput>;
 };
+
 
 export type MutationPublishManyReviewsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3455,15 +3563,18 @@ export type MutationPublishManyReviewsConnectionArgs = {
   where?: InputMaybe<ReviewManyWhereInput>;
 };
 
+
 export type MutationPublishOrderArgs = {
   to?: Array<Stage>;
   where: OrderWhereUniqueInput;
 };
 
+
 export type MutationPublishOrderItemArgs = {
   to?: Array<Stage>;
   where: OrderItemWhereUniqueInput;
 };
+
 
 export type MutationPublishProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3473,6 +3584,7 @@ export type MutationPublishProductArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishProductColorVariantArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3480,6 +3592,7 @@ export type MutationPublishProductColorVariantArgs = {
   where: ProductColorVariantWhereUniqueInput;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationPublishProductSizeColorVariantArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3489,6 +3602,7 @@ export type MutationPublishProductSizeColorVariantArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishProductSizeVariantArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3497,10 +3611,12 @@ export type MutationPublishProductSizeVariantArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationPublishReviewArgs = {
   to?: Array<Stage>;
   where: ReviewWhereUniqueInput;
 };
+
 
 export type MutationSchedulePublishAssetArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3512,6 +3628,7 @@ export type MutationSchedulePublishAssetArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationSchedulePublishCategoryArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3521,6 +3638,7 @@ export type MutationSchedulePublishCategoryArgs = {
   where: CategoryWhereUniqueInput;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationSchedulePublishCollectionArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3532,12 +3650,14 @@ export type MutationSchedulePublishCollectionArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationSchedulePublishCurrencyArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
   where: CurrencyWhereUniqueInput;
 };
+
 
 export type MutationSchedulePublishOrderArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
@@ -3546,12 +3666,14 @@ export type MutationSchedulePublishOrderArgs = {
   where: OrderWhereUniqueInput;
 };
 
+
 export type MutationSchedulePublishOrderItemArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
   where: OrderItemWhereUniqueInput;
 };
+
 
 export type MutationSchedulePublishProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3563,6 +3685,7 @@ export type MutationSchedulePublishProductArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationSchedulePublishProductColorVariantArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3572,6 +3695,7 @@ export type MutationSchedulePublishProductColorVariantArgs = {
   where: ProductColorVariantWhereUniqueInput;
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type MutationSchedulePublishProductSizeColorVariantArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -3583,6 +3707,7 @@ export type MutationSchedulePublishProductSizeColorVariantArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationSchedulePublishProductSizeVariantArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3593,12 +3718,14 @@ export type MutationSchedulePublishProductSizeVariantArgs = {
   withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MutationSchedulePublishReviewArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
   where: ReviewWhereUniqueInput;
 };
+
 
 export type MutationScheduleUnpublishAssetArgs = {
   from?: Array<Stage>;
@@ -3609,6 +3736,7 @@ export type MutationScheduleUnpublishAssetArgs = {
   where: AssetWhereUniqueInput;
 };
 
+
 export type MutationScheduleUnpublishCategoryArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -3617,6 +3745,7 @@ export type MutationScheduleUnpublishCategoryArgs = {
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where: CategoryWhereUniqueInput;
 };
+
 
 export type MutationScheduleUnpublishCollectionArgs = {
   from?: Array<Stage>;
@@ -3627,12 +3756,14 @@ export type MutationScheduleUnpublishCollectionArgs = {
   where: CollectionWhereUniqueInput;
 };
 
+
 export type MutationScheduleUnpublishCurrencyArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   where: CurrencyWhereUniqueInput;
 };
+
 
 export type MutationScheduleUnpublishOrderArgs = {
   from?: Array<Stage>;
@@ -3641,12 +3772,14 @@ export type MutationScheduleUnpublishOrderArgs = {
   where: OrderWhereUniqueInput;
 };
 
+
 export type MutationScheduleUnpublishOrderItemArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   where: OrderItemWhereUniqueInput;
 };
+
 
 export type MutationScheduleUnpublishProductArgs = {
   from?: Array<Stage>;
@@ -3657,6 +3790,7 @@ export type MutationScheduleUnpublishProductArgs = {
   where: ProductWhereUniqueInput;
 };
 
+
 export type MutationScheduleUnpublishProductColorVariantArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -3665,6 +3799,7 @@ export type MutationScheduleUnpublishProductColorVariantArgs = {
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where: ProductColorVariantWhereUniqueInput;
 };
+
 
 export type MutationScheduleUnpublishProductSizeColorVariantArgs = {
   from?: Array<Stage>;
@@ -3675,6 +3810,7 @@ export type MutationScheduleUnpublishProductSizeColorVariantArgs = {
   where: ProductSizeColorVariantWhereUniqueInput;
 };
 
+
 export type MutationScheduleUnpublishProductSizeVariantArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -3684,12 +3820,14 @@ export type MutationScheduleUnpublishProductSizeVariantArgs = {
   where: ProductSizeVariantWhereUniqueInput;
 };
 
+
 export type MutationScheduleUnpublishReviewArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   where: ReviewWhereUniqueInput;
 };
+
 
 export type MutationUnpublishAssetArgs = {
   from?: Array<Stage>;
@@ -3698,12 +3836,14 @@ export type MutationUnpublishAssetArgs = {
   where: AssetWhereUniqueInput;
 };
 
+
 export type MutationUnpublishCategoryArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where: CategoryWhereUniqueInput;
 };
+
 
 export type MutationUnpublishCollectionArgs = {
   from?: Array<Stage>;
@@ -3712,10 +3852,12 @@ export type MutationUnpublishCollectionArgs = {
   where: CollectionWhereUniqueInput;
 };
 
+
 export type MutationUnpublishCurrencyArgs = {
   from?: Array<Stage>;
   where: CurrencyWhereUniqueInput;
 };
+
 
 export type MutationUnpublishManyAssetsArgs = {
   from?: Array<Stage>;
@@ -3723,6 +3865,7 @@ export type MutationUnpublishManyAssetsArgs = {
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<AssetManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3737,12 +3880,14 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyCategoriesArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<CategoryManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyCategoriesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3757,12 +3902,14 @@ export type MutationUnpublishManyCategoriesConnectionArgs = {
   where?: InputMaybe<CategoryManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyCollectionsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<CollectionManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyCollectionsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3777,10 +3924,12 @@ export type MutationUnpublishManyCollectionsConnectionArgs = {
   where?: InputMaybe<CollectionManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyCurrenciesArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyCurrenciesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3793,10 +3942,12 @@ export type MutationUnpublishManyCurrenciesConnectionArgs = {
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyOrderItemsArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyOrderItemsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3809,10 +3960,12 @@ export type MutationUnpublishManyOrderItemsConnectionArgs = {
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyOrdersArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<OrderManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyOrdersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3825,12 +3978,14 @@ export type MutationUnpublishManyOrdersConnectionArgs = {
   where?: InputMaybe<OrderManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyProductColorVariantsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyProductColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3845,12 +4000,14 @@ export type MutationUnpublishManyProductColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyProductSizeColorVariantsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyProductSizeColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3865,12 +4022,14 @@ export type MutationUnpublishManyProductSizeColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyProductSizeVariantsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyProductSizeVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3885,12 +4044,14 @@ export type MutationUnpublishManyProductSizeVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyProductsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where?: InputMaybe<ProductManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyProductsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3905,10 +4066,12 @@ export type MutationUnpublishManyProductsConnectionArgs = {
   where?: InputMaybe<ProductManyWhereInput>;
 };
 
+
 export type MutationUnpublishManyReviewsArgs = {
   from?: Array<Stage>;
   where?: InputMaybe<ReviewManyWhereInput>;
 };
+
 
 export type MutationUnpublishManyReviewsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3921,15 +4084,18 @@ export type MutationUnpublishManyReviewsConnectionArgs = {
   where?: InputMaybe<ReviewManyWhereInput>;
 };
 
+
 export type MutationUnpublishOrderArgs = {
   from?: Array<Stage>;
   where: OrderWhereUniqueInput;
 };
 
+
 export type MutationUnpublishOrderItemArgs = {
   from?: Array<Stage>;
   where: OrderItemWhereUniqueInput;
 };
+
 
 export type MutationUnpublishProductArgs = {
   from?: Array<Stage>;
@@ -3938,12 +4104,14 @@ export type MutationUnpublishProductArgs = {
   where: ProductWhereUniqueInput;
 };
 
+
 export type MutationUnpublishProductColorVariantArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
   unpublishBase?: InputMaybe<Scalars['Boolean']>;
   where: ProductColorVariantWhereUniqueInput;
 };
+
 
 export type MutationUnpublishProductSizeColorVariantArgs = {
   from?: Array<Stage>;
@@ -3952,6 +4120,7 @@ export type MutationUnpublishProductSizeColorVariantArgs = {
   where: ProductSizeColorVariantWhereUniqueInput;
 };
 
+
 export type MutationUnpublishProductSizeVariantArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -3959,35 +4128,42 @@ export type MutationUnpublishProductSizeVariantArgs = {
   where: ProductSizeVariantWhereUniqueInput;
 };
 
+
 export type MutationUnpublishReviewArgs = {
   from?: Array<Stage>;
   where: ReviewWhereUniqueInput;
 };
+
 
 export type MutationUpdateAssetArgs = {
   data: AssetUpdateInput;
   where: AssetWhereUniqueInput;
 };
 
+
 export type MutationUpdateCategoryArgs = {
   data: CategoryUpdateInput;
   where: CategoryWhereUniqueInput;
 };
+
 
 export type MutationUpdateCollectionArgs = {
   data: CollectionUpdateInput;
   where: CollectionWhereUniqueInput;
 };
 
+
 export type MutationUpdateCurrencyArgs = {
   data: CurrencyUpdateInput;
   where: CurrencyWhereUniqueInput;
 };
 
+
 export type MutationUpdateManyAssetsArgs = {
   data: AssetUpdateManyInput;
   where?: InputMaybe<AssetManyWhereInput>;
 };
+
 
 export type MutationUpdateManyAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -3999,10 +4175,12 @@ export type MutationUpdateManyAssetsConnectionArgs = {
   where?: InputMaybe<AssetManyWhereInput>;
 };
 
+
 export type MutationUpdateManyCategoriesArgs = {
   data: CategoryUpdateManyInput;
   where?: InputMaybe<CategoryManyWhereInput>;
 };
+
 
 export type MutationUpdateManyCategoriesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4014,10 +4192,12 @@ export type MutationUpdateManyCategoriesConnectionArgs = {
   where?: InputMaybe<CategoryManyWhereInput>;
 };
 
+
 export type MutationUpdateManyCollectionsArgs = {
   data: CollectionUpdateManyInput;
   where?: InputMaybe<CollectionManyWhereInput>;
 };
+
 
 export type MutationUpdateManyCollectionsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4029,10 +4209,12 @@ export type MutationUpdateManyCollectionsConnectionArgs = {
   where?: InputMaybe<CollectionManyWhereInput>;
 };
 
+
 export type MutationUpdateManyCurrenciesArgs = {
   data: CurrencyUpdateManyInput;
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
+
 
 export type MutationUpdateManyCurrenciesConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4044,10 +4226,12 @@ export type MutationUpdateManyCurrenciesConnectionArgs = {
   where?: InputMaybe<CurrencyManyWhereInput>;
 };
 
+
 export type MutationUpdateManyOrderItemsArgs = {
   data: OrderItemUpdateManyInput;
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
+
 
 export type MutationUpdateManyOrderItemsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4059,10 +4243,12 @@ export type MutationUpdateManyOrderItemsConnectionArgs = {
   where?: InputMaybe<OrderItemManyWhereInput>;
 };
 
+
 export type MutationUpdateManyOrdersArgs = {
   data: OrderUpdateManyInput;
   where?: InputMaybe<OrderManyWhereInput>;
 };
+
 
 export type MutationUpdateManyOrdersConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4074,10 +4260,12 @@ export type MutationUpdateManyOrdersConnectionArgs = {
   where?: InputMaybe<OrderManyWhereInput>;
 };
 
+
 export type MutationUpdateManyProductColorVariantsArgs = {
   data: ProductColorVariantUpdateManyInput;
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
 };
+
 
 export type MutationUpdateManyProductColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4089,10 +4277,12 @@ export type MutationUpdateManyProductColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductColorVariantManyWhereInput>;
 };
 
+
 export type MutationUpdateManyProductSizeColorVariantsArgs = {
   data: ProductSizeColorVariantUpdateManyInput;
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
 };
+
 
 export type MutationUpdateManyProductSizeColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4104,10 +4294,12 @@ export type MutationUpdateManyProductSizeColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeColorVariantManyWhereInput>;
 };
 
+
 export type MutationUpdateManyProductSizeVariantsArgs = {
   data: ProductSizeVariantUpdateManyInput;
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
 };
+
 
 export type MutationUpdateManyProductSizeVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4119,10 +4311,12 @@ export type MutationUpdateManyProductSizeVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeVariantManyWhereInput>;
 };
 
+
 export type MutationUpdateManyProductsArgs = {
   data: ProductUpdateManyInput;
   where?: InputMaybe<ProductManyWhereInput>;
 };
+
 
 export type MutationUpdateManyProductsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4134,10 +4328,12 @@ export type MutationUpdateManyProductsConnectionArgs = {
   where?: InputMaybe<ProductManyWhereInput>;
 };
 
+
 export type MutationUpdateManyReviewsArgs = {
   data: ReviewUpdateManyInput;
   where?: InputMaybe<ReviewManyWhereInput>;
 };
+
 
 export type MutationUpdateManyReviewsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
@@ -4149,95 +4345,114 @@ export type MutationUpdateManyReviewsConnectionArgs = {
   where?: InputMaybe<ReviewManyWhereInput>;
 };
 
+
 export type MutationUpdateOrderArgs = {
   data: OrderUpdateInput;
   where: OrderWhereUniqueInput;
 };
+
 
 export type MutationUpdateOrderItemArgs = {
   data: OrderItemUpdateInput;
   where: OrderItemWhereUniqueInput;
 };
 
+
 export type MutationUpdateProductArgs = {
   data: ProductUpdateInput;
   where: ProductWhereUniqueInput;
 };
+
 
 export type MutationUpdateProductColorVariantArgs = {
   data: ProductColorVariantUpdateInput;
   where: ProductColorVariantWhereUniqueInput;
 };
 
+
 export type MutationUpdateProductSizeColorVariantArgs = {
   data: ProductSizeColorVariantUpdateInput;
   where: ProductSizeColorVariantWhereUniqueInput;
 };
+
 
 export type MutationUpdateProductSizeVariantArgs = {
   data: ProductSizeVariantUpdateInput;
   where: ProductSizeVariantWhereUniqueInput;
 };
 
+
 export type MutationUpdateReviewArgs = {
   data: ReviewUpdateInput;
   where: ReviewWhereUniqueInput;
 };
+
 
 export type MutationUpdateScheduledReleaseArgs = {
   data: ScheduledReleaseUpdateInput;
   where: ScheduledReleaseWhereUniqueInput;
 };
 
+
 export type MutationUpsertAssetArgs = {
   upsert: AssetUpsertInput;
   where: AssetWhereUniqueInput;
 };
+
 
 export type MutationUpsertCategoryArgs = {
   upsert: CategoryUpsertInput;
   where: CategoryWhereUniqueInput;
 };
 
+
 export type MutationUpsertCollectionArgs = {
   upsert: CollectionUpsertInput;
   where: CollectionWhereUniqueInput;
 };
+
 
 export type MutationUpsertCurrencyArgs = {
   upsert: CurrencyUpsertInput;
   where: CurrencyWhereUniqueInput;
 };
 
+
 export type MutationUpsertOrderArgs = {
   upsert: OrderUpsertInput;
   where: OrderWhereUniqueInput;
 };
+
 
 export type MutationUpsertOrderItemArgs = {
   upsert: OrderItemUpsertInput;
   where: OrderItemWhereUniqueInput;
 };
 
+
 export type MutationUpsertProductArgs = {
   upsert: ProductUpsertInput;
   where: ProductWhereUniqueInput;
 };
+
 
 export type MutationUpsertProductColorVariantArgs = {
   upsert: ProductColorVariantUpsertInput;
   where: ProductColorVariantWhereUniqueInput;
 };
 
+
 export type MutationUpsertProductSizeColorVariantArgs = {
   upsert: ProductSizeColorVariantUpsertInput;
   where: ProductSizeColorVariantWhereUniqueInput;
 };
 
+
 export type MutationUpsertProductSizeVariantArgs = {
   upsert: ProductSizeVariantUpsertInput;
   where: ProductSizeVariantWhereUniqueInput;
 };
+
 
 export type MutationUpsertReviewArgs = {
   upsert: ReviewUpsertInput;
@@ -4281,9 +4496,11 @@ export type Order = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type OrderCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type OrderDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -4291,11 +4508,13 @@ export type OrderDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type OrderHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
+
 
 export type OrderOrderItemsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -4308,9 +4527,11 @@ export type OrderOrderItemsArgs = {
   where?: InputMaybe<OrderItemWhereInput>;
 };
 
+
 export type OrderPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type OrderScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -4321,6 +4542,7 @@ export type OrderScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
+
 
 export type OrderUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -4404,9 +4626,11 @@ export type OrderItem = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type OrderItemCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type OrderItemDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -4414,23 +4638,28 @@ export type OrderItemDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type OrderItemHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 export type OrderItemOrderArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type OrderItemProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
+
 export type OrderItemPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type OrderItemScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -4441,6 +4670,7 @@ export type OrderItemScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
+
 
 export type OrderItemUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -4624,7 +4854,7 @@ export enum OrderItemOrderByInput {
   TotalAsc = 'total_ASC',
   TotalDesc = 'total_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type OrderItemUpdateInput = {
@@ -4996,7 +5226,7 @@ export enum OrderOrderByInput {
   TotalAsc = 'total_ASC',
   TotalDesc = 'total_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type OrderUpdateInput = {
@@ -5292,6 +5522,7 @@ export type Product = Node & {
   variants: Array<ProductVariants>;
 };
 
+
 export type ProductCategoriesArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -5302,6 +5533,7 @@ export type ProductCategoriesArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<CategoryWhereInput>;
 };
+
 
 export type ProductCollectionsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -5314,13 +5546,16 @@ export type ProductCollectionsArgs = {
   where?: InputMaybe<CollectionWhereInput>;
 };
 
+
 export type ProductCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -5328,11 +5563,13 @@ export type ProductDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type ProductHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
+
 
 export type ProductImagesArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -5345,10 +5582,12 @@ export type ProductImagesArgs = {
   where?: InputMaybe<AssetWhereInput>;
 };
 
+
 export type ProductLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
+
 
 export type ProductOrderItemsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -5361,13 +5600,16 @@ export type ProductOrderItemsArgs = {
   where?: InputMaybe<OrderItemWhereInput>;
 };
 
+
 export type ProductPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductReviewsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -5380,6 +5622,7 @@ export type ProductReviewsArgs = {
   where?: InputMaybe<ReviewWhereInput>;
 };
 
+
 export type ProductScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -5390,13 +5633,16 @@ export type ProductScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 export type ProductUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductVariantsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -5410,7 +5656,7 @@ export type ProductVariantsArgs = {
 export enum ProductColor {
   Black = 'BLACK',
   Pink = 'PINK',
-  Purple = 'PURPLE',
+  Purple = 'PURPLE'
 }
 
 export type ProductColorVariant = Node & {
@@ -5445,13 +5691,16 @@ export type ProductColorVariant = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type ProductColorVariantCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductColorVariantCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductColorVariantDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -5459,28 +5708,34 @@ export type ProductColorVariantDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type ProductColorVariantHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 export type ProductColorVariantLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
 
+
 export type ProductColorVariantProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductColorVariantPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductColorVariantPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductColorVariantScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -5492,9 +5747,11 @@ export type ProductColorVariantScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 export type ProductColorVariantUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 export type ProductColorVariantUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -5673,7 +5930,7 @@ export enum ProductColorVariantOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type ProductColorVariantUpdateInput = {
@@ -5716,13 +5973,9 @@ export type ProductColorVariantUpdateManyInlineInput = {
   /** Override currently-connected documents with multiple existing ProductColorVariant documents */
   set?: InputMaybe<Array<ProductColorVariantWhereUniqueInput>>;
   /** Update multiple ProductColorVariant documents */
-  update?: InputMaybe<
-    Array<ProductColorVariantUpdateWithNestedWhereUniqueInput>
-  >;
+  update?: InputMaybe<Array<ProductColorVariantUpdateWithNestedWhereUniqueInput>>;
   /** Upsert multiple ProductColorVariant documents */
-  upsert?: InputMaybe<
-    Array<ProductColorVariantUpsertWithNestedWhereUniqueInput>
-  >;
+  upsert?: InputMaybe<Array<ProductColorVariantUpsertWithNestedWhereUniqueInput>>;
 };
 
 export type ProductColorVariantUpdateManyInput = {
@@ -6130,7 +6383,7 @@ export enum ProductOrderByInput {
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export enum ProductSize {
@@ -6138,7 +6391,7 @@ export enum ProductSize {
   Medium = 'MEDIUM',
   Small = 'SMALL',
   Xl = 'XL',
-  Xs = 'XS',
+  Xs = 'XS'
 }
 
 export type ProductSizeColorVariant = Node & {
@@ -6174,13 +6427,16 @@ export type ProductSizeColorVariant = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type ProductSizeColorVariantCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductSizeColorVariantCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductSizeColorVariantDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -6188,28 +6444,34 @@ export type ProductSizeColorVariantDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type ProductSizeColorVariantHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 export type ProductSizeColorVariantLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
 
+
 export type ProductSizeColorVariantProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductSizeColorVariantPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductSizeColorVariantPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductSizeColorVariantScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -6221,9 +6483,11 @@ export type ProductSizeColorVariantScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 export type ProductSizeColorVariantUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 export type ProductSizeColorVariantUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -6412,7 +6676,7 @@ export enum ProductSizeColorVariantOrderByInput {
   SizeAsc = 'size_ASC',
   SizeDesc = 'size_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type ProductSizeColorVariantUpdateInput = {
@@ -6456,13 +6720,9 @@ export type ProductSizeColorVariantUpdateManyInlineInput = {
   /** Override currently-connected documents with multiple existing ProductSizeColorVariant documents */
   set?: InputMaybe<Array<ProductSizeColorVariantWhereUniqueInput>>;
   /** Update multiple ProductSizeColorVariant documents */
-  update?: InputMaybe<
-    Array<ProductSizeColorVariantUpdateWithNestedWhereUniqueInput>
-  >;
+  update?: InputMaybe<Array<ProductSizeColorVariantUpdateWithNestedWhereUniqueInput>>;
   /** Upsert multiple ProductSizeColorVariant documents */
-  upsert?: InputMaybe<
-    Array<ProductSizeColorVariantUpsertWithNestedWhereUniqueInput>
-  >;
+  upsert?: InputMaybe<Array<ProductSizeColorVariantUpsertWithNestedWhereUniqueInput>>;
 };
 
 export type ProductSizeColorVariantUpdateManyInput = {
@@ -6485,9 +6745,7 @@ export type ProductSizeColorVariantUpdateManyLocalizationInput = {
 
 export type ProductSizeColorVariantUpdateManyLocalizationsInput = {
   /** Localizations to update */
-  update?: InputMaybe<
-    Array<ProductSizeColorVariantUpdateManyLocalizationInput>
-  >;
+  update?: InputMaybe<Array<ProductSizeColorVariantUpdateManyLocalizationInput>>;
 };
 
 export type ProductSizeColorVariantUpdateManyWithNestedWhereInput = {
@@ -6715,13 +6973,16 @@ export type ProductSizeVariant = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type ProductSizeVariantCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductSizeVariantCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductSizeVariantDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -6729,28 +6990,34 @@ export type ProductSizeVariantDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type ProductSizeVariantHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 export type ProductSizeVariantLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean'];
   locales?: Array<Locale>;
 };
 
+
 export type ProductSizeVariantProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductSizeVariantPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 export type ProductSizeVariantPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ProductSizeVariantScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -6762,9 +7029,11 @@ export type ProductSizeVariantScheduledInArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 export type ProductSizeVariantUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 export type ProductSizeVariantUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -6943,7 +7212,7 @@ export enum ProductSizeVariantOrderByInput {
   SizeAsc = 'size_ASC',
   SizeDesc = 'size_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type ProductSizeVariantUpdateInput = {
@@ -6986,13 +7255,9 @@ export type ProductSizeVariantUpdateManyInlineInput = {
   /** Override currently-connected documents with multiple existing ProductSizeVariant documents */
   set?: InputMaybe<Array<ProductSizeVariantWhereUniqueInput>>;
   /** Update multiple ProductSizeVariant documents */
-  update?: InputMaybe<
-    Array<ProductSizeVariantUpdateWithNestedWhereUniqueInput>
-  >;
+  update?: InputMaybe<Array<ProductSizeVariantUpdateWithNestedWhereUniqueInput>>;
   /** Upsert multiple ProductSizeVariant documents */
-  upsert?: InputMaybe<
-    Array<ProductSizeVariantUpsertWithNestedWhereUniqueInput>
-  >;
+  upsert?: InputMaybe<Array<ProductSizeVariantUpsertWithNestedWhereUniqueInput>>;
 };
 
 export type ProductSizeVariantUpdateManyInput = {
@@ -7334,10 +7599,7 @@ export type ProductUpsertWithNestedWhereUniqueInput = {
   where: ProductWhereUniqueInput;
 };
 
-export type ProductVariants =
-  | ProductColorVariant
-  | ProductSizeColorVariant
-  | ProductSizeVariant;
+export type ProductVariants = ProductColorVariant | ProductSizeColorVariant | ProductSizeVariant;
 
 export type ProductVariantsConnectInput = {
   ProductColorVariant?: InputMaybe<ProductColorVariantConnectInput>;
@@ -7749,15 +8011,18 @@ export type Query = {
   usersConnection: UserConnection;
 };
 
+
 export type QueryAssetArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: AssetWhereUniqueInput;
 };
 
+
 export type QueryAssetVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryAssetsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7771,6 +8036,7 @@ export type QueryAssetsArgs = {
   where?: InputMaybe<AssetWhereInput>;
 };
 
+
 export type QueryAssetsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7782,6 +8048,7 @@ export type QueryAssetsConnectionArgs = {
   stage?: Stage;
   where?: InputMaybe<AssetWhereInput>;
 };
+
 
 export type QueryCategoriesArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7795,6 +8062,7 @@ export type QueryCategoriesArgs = {
   where?: InputMaybe<CategoryWhereInput>;
 };
 
+
 export type QueryCategoriesConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7807,15 +8075,18 @@ export type QueryCategoriesConnectionArgs = {
   where?: InputMaybe<CategoryWhereInput>;
 };
 
+
 export type QueryCategoryArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: CategoryWhereUniqueInput;
 };
 
+
 export type QueryCategoryVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryCollectionArgs = {
   locales?: Array<Locale>;
@@ -7823,9 +8094,11 @@ export type QueryCollectionArgs = {
   where: CollectionWhereUniqueInput;
 };
 
+
 export type QueryCollectionVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryCollectionsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7839,6 +8112,7 @@ export type QueryCollectionsArgs = {
   where?: InputMaybe<CollectionWhereInput>;
 };
 
+
 export type QueryCollectionsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7850,6 +8124,7 @@ export type QueryCollectionsConnectionArgs = {
   stage?: Stage;
   where?: InputMaybe<CollectionWhereInput>;
 };
+
 
 export type QueryCurrenciesArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7863,6 +8138,7 @@ export type QueryCurrenciesArgs = {
   where?: InputMaybe<CurrencyWhereInput>;
 };
 
+
 export type QueryCurrenciesConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7875,15 +8151,18 @@ export type QueryCurrenciesConnectionArgs = {
   where?: InputMaybe<CurrencyWhereInput>;
 };
 
+
 export type QueryCurrencyArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: CurrencyWhereUniqueInput;
 };
 
+
 export type QueryCurrencyVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryNodeArgs = {
   id: Scalars['ID'];
@@ -7891,11 +8170,13 @@ export type QueryNodeArgs = {
   stage?: Stage;
 };
 
+
 export type QueryOrderArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: OrderWhereUniqueInput;
 };
+
 
 export type QueryOrderItemArgs = {
   locales?: Array<Locale>;
@@ -7903,9 +8184,11 @@ export type QueryOrderItemArgs = {
   where: OrderItemWhereUniqueInput;
 };
 
+
 export type QueryOrderItemVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryOrderItemsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7919,6 +8202,7 @@ export type QueryOrderItemsArgs = {
   where?: InputMaybe<OrderItemWhereInput>;
 };
 
+
 export type QueryOrderItemsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7931,9 +8215,11 @@ export type QueryOrderItemsConnectionArgs = {
   where?: InputMaybe<OrderItemWhereInput>;
 };
 
+
 export type QueryOrderVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryOrdersArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7947,6 +8233,7 @@ export type QueryOrdersArgs = {
   where?: InputMaybe<OrderWhereInput>;
 };
 
+
 export type QueryOrdersConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7959,11 +8246,13 @@ export type QueryOrdersConnectionArgs = {
   where?: InputMaybe<OrderWhereInput>;
 };
 
+
 export type QueryProductArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ProductWhereUniqueInput;
 };
+
 
 export type QueryProductColorVariantArgs = {
   locales?: Array<Locale>;
@@ -7971,9 +8260,11 @@ export type QueryProductColorVariantArgs = {
   where: ProductColorVariantWhereUniqueInput;
 };
 
+
 export type QueryProductColorVariantVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryProductColorVariantsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -7987,6 +8278,7 @@ export type QueryProductColorVariantsArgs = {
   where?: InputMaybe<ProductColorVariantWhereInput>;
 };
 
+
 export type QueryProductColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -7999,15 +8291,18 @@ export type QueryProductColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductColorVariantWhereInput>;
 };
 
+
 export type QueryProductSizeColorVariantArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ProductSizeColorVariantWhereUniqueInput;
 };
 
+
 export type QueryProductSizeColorVariantVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryProductSizeColorVariantsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8021,6 +8316,7 @@ export type QueryProductSizeColorVariantsArgs = {
   where?: InputMaybe<ProductSizeColorVariantWhereInput>;
 };
 
+
 export type QueryProductSizeColorVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -8033,15 +8329,18 @@ export type QueryProductSizeColorVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeColorVariantWhereInput>;
 };
 
+
 export type QueryProductSizeVariantArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ProductSizeVariantWhereUniqueInput;
 };
 
+
 export type QueryProductSizeVariantVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryProductSizeVariantsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8055,6 +8354,7 @@ export type QueryProductSizeVariantsArgs = {
   where?: InputMaybe<ProductSizeVariantWhereInput>;
 };
 
+
 export type QueryProductSizeVariantsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -8067,9 +8367,11 @@ export type QueryProductSizeVariantsConnectionArgs = {
   where?: InputMaybe<ProductSizeVariantWhereInput>;
 };
 
+
 export type QueryProductVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryProductsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8083,6 +8385,7 @@ export type QueryProductsArgs = {
   where?: InputMaybe<ProductWhereInput>;
 };
 
+
 export type QueryProductsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -8095,15 +8398,18 @@ export type QueryProductsConnectionArgs = {
   where?: InputMaybe<ProductWhereInput>;
 };
 
+
 export type QueryReviewArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ReviewWhereUniqueInput;
 };
 
+
 export type QueryReviewVersionArgs = {
   where: VersionWhereInput;
 };
+
 
 export type QueryReviewsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8117,6 +8423,7 @@ export type QueryReviewsArgs = {
   where?: InputMaybe<ReviewWhereInput>;
 };
 
+
 export type QueryReviewsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -8129,11 +8436,13 @@ export type QueryReviewsConnectionArgs = {
   where?: InputMaybe<ReviewWhereInput>;
 };
 
+
 export type QueryScheduledOperationArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ScheduledOperationWhereUniqueInput;
 };
+
 
 export type QueryScheduledOperationsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8147,6 +8456,7 @@ export type QueryScheduledOperationsArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 export type QueryScheduledOperationsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -8159,11 +8469,13 @@ export type QueryScheduledOperationsConnectionArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 export type QueryScheduledReleaseArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: ScheduledReleaseWhereUniqueInput;
 };
+
 
 export type QueryScheduledReleasesArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8177,6 +8489,7 @@ export type QueryScheduledReleasesArgs = {
   where?: InputMaybe<ScheduledReleaseWhereInput>;
 };
 
+
 export type QueryScheduledReleasesConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
@@ -8189,11 +8502,13 @@ export type QueryScheduledReleasesConnectionArgs = {
   where?: InputMaybe<ScheduledReleaseWhereInput>;
 };
 
+
 export type QueryUserArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
   where: UserWhereUniqueInput;
 };
+
 
 export type QueryUsersArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8206,6 +8521,7 @@ export type QueryUsersArgs = {
   stage?: Stage;
   where?: InputMaybe<UserWhereInput>;
 };
+
 
 export type QueryUsersConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8267,9 +8583,11 @@ export type Review = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 export type ReviewCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ReviewDocumentInStagesArgs = {
   includeCurrent?: Scalars['Boolean'];
@@ -8277,19 +8595,23 @@ export type ReviewDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 export type ReviewHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
 };
 
+
 export type ReviewProductArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
+
 export type ReviewPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 export type ReviewScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8300,6 +8622,7 @@ export type ReviewScheduledInArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
+
 
 export type ReviewUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
@@ -8551,7 +8874,7 @@ export enum ReviewOrderByInput {
   RatingAsc = 'rating_ASC',
   RatingDesc = 'rating_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type ReviewUpdateInput = {
@@ -8880,6 +9203,7 @@ export type ScheduledOperation = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 /** Scheduled Operation system model */
 export type ScheduledOperationAffectedDocumentsArgs = {
   after?: InputMaybe<Scalars['String']>;
@@ -8890,10 +9214,12 @@ export type ScheduledOperationAffectedDocumentsArgs = {
   skip?: InputMaybe<Scalars['Int']>;
 };
 
+
 /** Scheduled Operation system model */
 export type ScheduledOperationCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Scheduled Operation system model */
 export type ScheduledOperationDocumentInStagesArgs = {
@@ -8902,33 +9228,25 @@ export type ScheduledOperationDocumentInStagesArgs = {
   stages?: Array<Stage>;
 };
 
+
 /** Scheduled Operation system model */
 export type ScheduledOperationPublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Scheduled Operation system model */
 export type ScheduledOperationReleaseArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
+
 /** Scheduled Operation system model */
 export type ScheduledOperationUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument =
-  | Asset
-  | Category
-  | Collection
-  | Currency
-  | Order
-  | OrderItem
-  | Product
-  | ProductColorVariant
-  | ProductSizeColorVariant
-  | ProductSizeVariant
-  | Review;
+export type ScheduledOperationAffectedDocument = Asset | Category | Collection | Currency | Order | OrderItem | Product | ProductColorVariant | ProductSizeColorVariant | ProductSizeVariant | Review;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -9105,7 +9423,7 @@ export enum ScheduledOperationOrderByInput {
   StatusAsc = 'status_ASC',
   StatusDesc = 'status_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 /** System Scheduled Operation Status */
@@ -9114,7 +9432,7 @@ export enum ScheduledOperationStatus {
   Completed = 'COMPLETED',
   Failed = 'FAILED',
   InProgress = 'IN_PROGRESS',
-  Pending = 'PENDING',
+  Pending = 'PENDING'
 }
 
 export type ScheduledOperationUpdateManyInlineInput = {
@@ -9302,10 +9620,12 @@ export type ScheduledRelease = Node & {
   updatedBy?: Maybe<User>;
 };
 
+
 /** Scheduled Release system model */
 export type ScheduledReleaseCreatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Scheduled Release system model */
 export type ScheduledReleaseDocumentInStagesArgs = {
@@ -9313,6 +9633,7 @@ export type ScheduledReleaseDocumentInStagesArgs = {
   inheritLocale?: Scalars['Boolean'];
   stages?: Array<Stage>;
 };
+
 
 /** Scheduled Release system model */
 export type ScheduledReleaseOperationsArgs = {
@@ -9326,10 +9647,12 @@ export type ScheduledReleaseOperationsArgs = {
   where?: InputMaybe<ScheduledOperationWhereInput>;
 };
 
+
 /** Scheduled Release system model */
 export type ScheduledReleasePublishedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
+
 
 /** Scheduled Release system model */
 export type ScheduledReleaseUpdatedByArgs = {
@@ -9575,7 +9898,7 @@ export enum ScheduledReleaseOrderByInput {
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 /** System Scheduled Release Status */
@@ -9583,7 +9906,7 @@ export enum ScheduledReleaseStatus {
   Completed = 'COMPLETED',
   Failed = 'FAILED',
   InProgress = 'IN_PROGRESS',
-  Pending = 'PENDING',
+  Pending = 'PENDING'
 }
 
 export type ScheduledReleaseUpdateInput = {
@@ -9839,13 +10162,13 @@ export enum Stage {
   /** The Draft is the default stage for all your content. */
   Draft = 'DRAFT',
   /** The Published stage is where you can publish your content to. */
-  Published = 'PUBLISHED',
+  Published = 'PUBLISHED'
 }
 
 export enum SystemDateTimeFieldVariation {
   Base = 'BASE',
   Combined = 'COMBINED',
-  Localization = 'LOCALIZATION',
+  Localization = 'LOCALIZATION'
 }
 
 export type UnpublishLocaleInput = {
@@ -9879,6 +10202,7 @@ export type User = Node & {
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
 };
+
 
 /** User system model */
 export type UserDocumentInStagesArgs = {
@@ -9928,7 +10252,7 @@ export enum UserKind {
   Member = 'MEMBER',
   Pat = 'PAT',
   Public = 'PUBLIC',
-  Webhook = 'WEBHOOK',
+  Webhook = 'WEBHOOK'
 }
 
 /** Identifies documents */
@@ -10074,7 +10398,7 @@ export enum UserOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type UserUpdateManyInlineInput = {
@@ -10284,7 +10608,7 @@ export enum _FilterKind {
   RelationalSingle = 'relational_single',
   RelationalSome = 'relational_some',
   Search = 'search',
-  StartsWith = 'starts_with',
+  StartsWith = 'starts_with'
 }
 
 export enum _MutationInputFieldKind {
@@ -10294,7 +10618,7 @@ export enum _MutationInputFieldKind {
   RichTextWithEmbeds = 'richTextWithEmbeds',
   Scalar = 'scalar',
   Union = 'union',
-  Virtual = 'virtual',
+  Virtual = 'virtual'
 }
 
 export enum _MutationKind {
@@ -10309,94 +10633,39 @@ export enum _MutationKind {
   UnpublishMany = 'unpublishMany',
   Update = 'update',
   UpdateMany = 'updateMany',
-  Upsert = 'upsert',
+  Upsert = 'upsert'
 }
 
 export enum _OrderDirection {
   Asc = 'asc',
-  Desc = 'desc',
+  Desc = 'desc'
 }
 
 export enum _RelationInputCardinality {
   Many = 'many',
-  One = 'one',
+  One = 'one'
 }
 
 export enum _RelationInputKind {
   Create = 'create',
-  Update = 'update',
+  Update = 'update'
 }
 
 export enum _RelationKind {
   Regular = 'regular',
-  Union = 'union',
+  Union = 'union'
 }
 
 export enum _SystemDateTimeFieldVariation {
   Base = 'base',
   Combined = 'combined',
-  Localization = 'localization',
+  Localization = 'localization'
 }
 
-export type GetProductsListQueryVariables = Exact<{ [key: string]: never }>;
+export type GetProductsListQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type GetProductsListQuery = {
-  __typename?: 'Query';
-  products: Array<{
-    __typename?: 'Product';
-    id: string;
-    slug: string;
-    name: string;
-    price: number;
-    images: Array<{ __typename?: 'Asset'; url: string }>;
-  }>;
-};
 
-export const GetProductsListDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'GetProductsList' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'products' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'price' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'images' },
-                  arguments: [
-                    {
-                      kind: 'Argument',
-                      name: { kind: 'Name', value: 'first' },
-                      value: { kind: 'IntValue', value: '1' },
-                    },
-                  ],
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      { kind: 'Field', name: { kind: 'Name', value: 'url' } },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<
-  GetProductsListQuery,
-  GetProductsListQueryVariables
->;
+export type GetProductsListQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, slug: string, name: string, price: number, images: Array<{ __typename?: 'Asset', url: string }> }> };
+
+
+export const GetProductsListDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetProductsList"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"products"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetProductsListQuery, GetProductsListQueryVariables>;
