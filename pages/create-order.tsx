@@ -3,7 +3,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { CartContent } from 'components/CartContent';
 import { useCartState } from 'components/Header/Cart/CartContext';
 import { Input } from 'components/Input';
-import { OrderFormValues } from 'interfaces';
+import {
+  CreateOrderDocument,
+  CreateOrderMutation,
+  CreateOrderMutationVariables,
+} from 'generated/graphql';
+import { apolloClient } from 'graphql/apolloClient';
+import { FormValues, OrderFormValues } from 'interfaces';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { orderFormSchema } from 'schemas/orderForm';
@@ -14,20 +20,49 @@ const OrderForm = () => {
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm<OrderFormValues>({
+  } = useForm<FormValues>({
     resolver: yupResolver(orderFormSchema),
   });
 
-  const { items } = useCartState();
+  const { items, clearCart } = useCartState();
 
   const fullAmount = useMemo(
-    () => items?.reduce((acc, item) => acc + item.price * item.count, 0),
+    () => items?.reduce((acc, item) => acc + item.price * item.count, 0) || 0,
     [items]
   );
 
   const onSubmit = async (data: OrderFormValues) => {
-    console.log(data);
-    reset();
+    try {
+      await apolloClient.mutate<
+        CreateOrderMutation,
+        CreateOrderMutationVariables
+      >({
+        mutation: CreateOrderDocument,
+        variables: {
+          order: {
+            email: data.email,
+            stripeCheckoutId: '123',
+            total: fullAmount,
+            orderItems: {
+              create: items?.map((item) => ({
+                quantity: item.count,
+                total: item.count * item.price,
+                product: {
+                  connect: {
+                    id: item.id as string,
+                  },
+                },
+              })),
+            },
+          },
+        },
+      });
+      clearCart();
+      reset();
+      alert('Zamówienie stworzone!');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -36,12 +71,12 @@ const OrderForm = () => {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          name="firstName"
-          label="Imię"
+          name="email"
+          label="Email"
           type="text"
-          placeholder="wpisz imię..."
+          placeholder="wpisz email..."
           register={register}
-          errorMessage={errors.firstName?.message}
+          errorMessage={errors.email?.message}
         />
         <div>
           Kwota do zapłacenia: <span className="font-bold">{fullAmount}$</span>

@@ -1,7 +1,8 @@
 export interface FormValues {
   firstName: string;
+  email: string;
 }
 
 export interface OrderFormValues {
-  firstName: string;
+  email: string;
 }
