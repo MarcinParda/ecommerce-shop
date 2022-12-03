@@ -19,7 +19,7 @@ const CartSummary = () => {
         Kwota do zapłacenia: <span className="font-bold">{fullAmount}$</span>
       </div>
       {items && items.length > 0 && (
-        <Link href="/order">
+        <Link href="/create-order">
           <a className="text-blue-500 underline hover:text-blue-700">Płacę</a>
         </Link>
       )}
@@ -29,9 +29,9 @@ const CartSummary = () => {
 
 const CartPage = () => {
   return (
-    <div className="max-w-2xl mx-auto w-full p-4">
-      <div className="grid grid-cols-3 gap-8">
-        <CartContent />
+    <div className="max-w-4xl mx-auto w-full p-4">
+      <div className="grid grid-cols-2 gap-8">
+        <CartContent editable />
         <CartSummary />
       </div>
     </div>

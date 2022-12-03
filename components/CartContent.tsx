@@ -1,13 +1,18 @@
 import { TrashIcon } from '@heroicons/react/outline';
 import { useCartState } from './Header/Cart/CartContext';
 
-export const CartContent = () => {
-  const cartState = useCartState();
+interface Props {
+  editable?: boolean;
+}
+
+export const CartContent = ({ editable = false }: Props) => {
+  const { items, removeItemFromCart } = useCartState();
   return (
-    <div className="col-span-2">
-      {cartState.items && cartState.items.length > 0 ? (
+    <div>
+      <h2>Zawartość koszyka</h2>
+      {items && items.length > 0 ? (
         <ul className="divide-y divide-gray-200">
-          {cartState.items.map((item, index) => (
+          {items.map((item, index) => (
             <li
               key={`${item.title}_${index}`}
               className="py-4 flex justify-between"
@@ -17,12 +22,14 @@ export const CartContent = () => {
               </div>
               <div className="flex align-middle">
                 {item.price}$
-                <button
-                  className="ml-2 text-red-500"
-                  onClick={() => cartState.removeItemFromCart(item.id)}
-                >
-                  <TrashIcon className="h-5 w-5" aria-hidden="true" />
-                </button>
+                {editable && (
+                  <button
+                    className="ml-2 text-red-500"
+                    onClick={() => removeItemFromCart(item.id)}
+                  >
+                    <TrashIcon className="h-5 w-5" aria-hidden="true" />
+                  </button>
+                )}
               </div>
             </li>
           ))}
@@ -30,6 +37,9 @@ export const CartContent = () => {
       ) : (
         'Brak produktów w koszyku'
       )}
+      <div className="mt-4 font-bold">
+        Liczba wszystkich elementów: {items && items.length}
+      </div>
     </div>
   );
 };
