@@ -5,7 +5,8 @@ import { useMemo } from 'react';
 const CartContent = () => {
   const cartState = useCartState();
   return (
-    <div className="col-span-2">
+    <div>
+      <h2>Przedmioty w koszyku</h2>
       {cartState.items && cartState.items.length > 0 ? (
         <ul className="divide-y divide-gray-200">
           {cartState.items.map((item, index) => (
@@ -35,7 +36,7 @@ const CartContent = () => {
   );
 };
 
-const CartSummary = () => {
+const OrderForm = () => {
   const { items } = useCartState();
 
   const fullAmount = useMemo(
@@ -45,13 +46,13 @@ const CartSummary = () => {
 
   return (
     <div>
-      Podsumowanie koszyka
+      <h1>Formularz zamówienia</h1>
       <div>Liczba elementów: {items ? items.length : 0}</div>
       <div>
         Kwota do zapłacenia: <span className="font-bold">{fullAmount}$</span>
       </div>
       <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 mt-2 border border-gray-400 rounded shadow">
-        Płacę
+        Stwórz zamówienie
       </button>
     </div>
   );
@@ -59,10 +60,10 @@ const CartSummary = () => {
 
 const CartPage = () => {
   return (
-    <div className="max-w-2xl mx-auto w-full p-4">
-      <div className="grid grid-cols-3 gap-8">
+    <div className="max-w-4xl mx-auto w-full p-4">
+      <div className="grid grid-cols-2 gap-8">
+        <OrderForm />
         <CartContent />
-        <CartSummary />
       </div>
     </div>
   );

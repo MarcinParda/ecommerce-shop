@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl pb-4;
+  }
+  h2 {
+    @apply text-xl pb-2;
+  }
+}
