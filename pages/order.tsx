@@ -1,6 +1,5 @@
 import { TrashIcon } from '@heroicons/react/outline';
 import { useCartState } from 'components/Header/Cart/CartContext';
-import Link from 'next/link';
 import { useMemo } from 'react';
 
 const CartContent = () => {
@@ -51,11 +50,9 @@ const CartSummary = () => {
       <div>
         Kwota do zapłacenia: <span className="font-bold">{fullAmount}$</span>
       </div>
-      {items && items.length > 0 && (
-        <Link href="/order">
-          <a className="text-blue-500 underline hover:text-blue-700">Płacę</a>
-        </Link>
-      )}
+      <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 mt-2 border border-gray-400 rounded shadow">
+        Płacę
+      </button>
     </div>
   );
 };
