@@ -4,10 +4,14 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 
 const documents = {
     "mutation CreateOrder($order: OrderCreateInput!) {\n  order: createOrder(data: $order) {\n    id\n  }\n}": types.CreateOrderDocument,
+    "query GetProductDetails($id: ID) {\n  product(where: {id: $id}) {\n    id\n    slug\n    name\n    price\n    description\n    images(first: 1) {\n      url\n    }\n  }\n}": types.GetProductDetailsDocument,
+    "query GetProductsIds {\n  products {\n    id\n  }\n}": types.GetProductsIdsDocument,
     "query GetProductsList {\n  products {\n    id\n    slug\n    name\n    price\n    images(first: 1) {\n      url\n    }\n  }\n}": types.GetProductsListDocument,
 };
 
 export function graphql(source: "mutation CreateOrder($order: OrderCreateInput!) {\n  order: createOrder(data: $order) {\n    id\n  }\n}"): (typeof documents)["mutation CreateOrder($order: OrderCreateInput!) {\n  order: createOrder(data: $order) {\n    id\n  }\n}"];
+export function graphql(source: "query GetProductDetails($id: ID) {\n  product(where: {id: $id}) {\n    id\n    slug\n    name\n    price\n    description\n    images(first: 1) {\n      url\n    }\n  }\n}"): (typeof documents)["query GetProductDetails($id: ID) {\n  product(where: {id: $id}) {\n    id\n    slug\n    name\n    price\n    description\n    images(first: 1) {\n      url\n    }\n  }\n}"];
+export function graphql(source: "query GetProductsIds {\n  products {\n    id\n  }\n}"): (typeof documents)["query GetProductsIds {\n  products {\n    id\n  }\n}"];
 export function graphql(source: "query GetProductsList {\n  products {\n    id\n    slug\n    name\n    price\n    images(first: 1) {\n      url\n    }\n  }\n}"): (typeof documents)["query GetProductsList {\n  products {\n    id\n    slug\n    name\n    price\n    images(first: 1) {\n      url\n    }\n  }\n}"];
 
 export function graphql(source: string): unknown;

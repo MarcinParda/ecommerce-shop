@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useCartState } from './Header/Cart/CartContext';
 
@@ -31,6 +32,11 @@ export default function Product({ image, price, title, id }: Props) {
       >
         Dodaj do koszyka
       </button>
+      <Link href={`/products/${id}`}>
+        <a className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 mt-2 border border-gray-400 rounded shadow">
+          Szczegóły
+        </a>
+      </Link>
     </div>
   );
 }
