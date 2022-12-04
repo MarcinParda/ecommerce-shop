@@ -2,7 +2,7 @@ import { FormValues } from 'interfaces';
 import React, { HTMLInputTypeAttribute } from 'react';
 import { FieldErrorsImpl, Path, UseFormRegister } from 'react-hook-form';
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: Path<FormValues>;
   register: UseFormRegister<FormValues>;
   type?: HTMLInputTypeAttribute;
@@ -10,7 +10,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   errorMessage: string | undefined;
 }
 
-export const Input = ({
+export const TextArea = ({
   register,
   name,
   label,
@@ -22,7 +22,7 @@ export const Input = ({
     <div className="mb-2">
       <label className="block">
         <span className="text-gray-700 text-sm font-bold">{label}</span>
-        <input
+        <textarea
           className={`shadow appearance-none border ${
             !!errorMessage ? 'border-red-500' : 'border-gray-600'
           } rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline`}
