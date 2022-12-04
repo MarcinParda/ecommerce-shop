@@ -12,6 +12,7 @@ interface CartState {
   readonly items: readonly CartItem[] | undefined;
   readonly addItemToCart: (item: CartItem) => void;
   readonly removeItemFromCart: (id: CartItem['id']) => void;
+  readonly clearCart: () => void;
 }
 
 export const CartStateContext = createContext<CartState | null>(null);
@@ -71,6 +72,9 @@ export const CartStateContextProvider = ({
                 : existingItem;
             });
           });
+        },
+        clearCart: () => {
+          setCartItems([]);
         },
       }}
     >

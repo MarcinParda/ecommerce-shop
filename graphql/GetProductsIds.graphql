@@ -1,0 +1,5 @@
+query GetProductsIds {
+  products {
+    id
+  }
+}

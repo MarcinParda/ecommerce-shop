@@ -1,0 +1,10 @@
+mutation CreateProductReview($review: ReviewCreateInput!) {
+  review: createReview(data: $review) {
+    id
+    headline
+    name
+    email
+    content
+    rating
+  }
+}
