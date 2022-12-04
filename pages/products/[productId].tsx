@@ -1,4 +1,6 @@
+import { ShoppingCartIcon } from '@heroicons/react/outline';
 import AppMarkdown from 'components/AppMarkdown';
+import { useCartState } from 'components/Header/Cart/CartContext';
 import {
   GetProductDetailsDocument,
   GetProductDetailsQuery,
@@ -7,41 +9,57 @@ import {
   GetProductsIdsQuery,
 } from 'generated/graphql';
 import { apolloClient } from 'graphql/apolloClient';
-import { InferGetStaticPaths } from 'interfaces';
+import { CartItem, InferGetStaticPaths } from 'interfaces';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 
 const ProductPage = ({
   data,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { addItemToCart } = useCartState();
+
   if (!data?.product) {
     return <div>Coś poszło nie tak...</div>;
   }
 
   const {
-    product: { description, images, name, price },
+    product: { description, images, name, price, id },
   } = data;
 
+  const item: CartItem = {
+    id,
+    title: name,
+    price,
+    count: 1,
+  };
+
   return (
-    <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex justify-center items-center flex-col">
-      <header>
-        <h1 className="py-8">{name}</h1>
-      </header>
-      <div className="w-6/12">
-        <Image
-          src={images[0].url}
-          alt={name}
-          layout="responsive"
-          width={1}
-          height={1}
-          objectFit="fill"
-        />
+    <section className="mx-auto max-w-sm overflow-hidden">
+      <Image
+        src={images[0].url}
+        alt="product"
+        layout="responsive"
+        width={1}
+        height={1}
+        objectFit="cover"
+      />
+      <div className="px-6 py-4">
+        <h3 className="font-bold text-xl mb-2">{name}</h3>
+        <p className="text-gray-700 text-base">{description}</p>
       </div>
-      <span className="text-4xl py-5">Price: {price}$</span>
-      <p>
-        <h2>{description}</h2>
-      </p>
-    </main>
+      <div className="px-6 py-4">
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          ${price}
+        </span>
+      </div>
+      <button
+        onClick={() => addItemToCart(item)}
+        className="inline-flex items-center px-4 py-2 border rounded-md text-sm font-medium leading-5 text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700"
+      >
+        <ShoppingCartIcon className="w-5 h-5 rounded-full shadow transform transition-all duration-300 ease-in-out group-hover:translate-x-1 group-active:translate-x-2" />
+        <span className="ml-2">Dodaj do koszyka</span>
+      </button>
+    </section>
   );
 };
 
