@@ -101,6 +101,17 @@ export const weeks: Week[] = [
       },
     ],
   },
+  {
+    description: 'Next.js i API',
+    number: 10,
+    exercises: [
+      {
+        number: 1,
+        codeHref: '/pages/exercises/week-9/exercise-1.tsx',
+        description: 'Zaimplementuj formularz zapisywania się na mailing.',
+      },
+    ],
+  },
 ];
 
 export const repoUrl =

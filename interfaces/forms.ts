@@ -18,3 +18,7 @@ export interface CreateReviewFormData {
   content: string;
   rating?: number;
 }
+
+export interface MailingFormData {
+  email: string;
+}
