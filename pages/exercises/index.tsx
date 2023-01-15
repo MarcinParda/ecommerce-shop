@@ -9,7 +9,7 @@ const ExercisesPage = () => {
       <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         {weeks.map((week) => (
           <div
-            className="bg-white shadow overflow-hidden sm:rounded-lg mt-2 sm:mt-6 lg:mt-8"
+            className="bg-white shadow overflow-hidden sm:rounded-lg my-2 sm:my-6 lg:my-8"
             key={week.number}
           >
             <div className="px-4 py-5 sm:px-6">

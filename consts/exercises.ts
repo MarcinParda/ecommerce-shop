@@ -75,8 +75,29 @@ export const weeks: Week[] = [
       {
         number: 2,
         codeHref: '/pages/exercises/week-8/exercise-1.tsx',
+        liveHref: '/products/ckdu44mn40gxh010405uwgbtw',
         description:
           'Korzystając z yup, dodaj walidację do swojego formularza. Następnie przetłumacz błędy na język polski i skonfiguruj yup tak, aby wyświetlały się Twoje tłumaczenia zamiast oryginałów po angielsku.',
+      },
+    ],
+  },
+  {
+    description: 'Formularze',
+    number: 9,
+    exercises: [
+      {
+        number: 1,
+        codeHref: '/pages/exercises/week-8/exercise-1.tsx',
+        liveHref: '/create-order',
+        description:
+          'Tymczasowo spraw, aby wysłanie formularza "checkout" powodowało tworzenie nowego zamówienia i zapisywanie go w GraphCMS. * docelowo nie będzie to robione po stronie frontendu tylko dopiero po potwierdzeniu płatności :)',
+      },
+      {
+        number: 2,
+        codeHref: '/pages/products/AddReviewForm.tsx',
+        liveHref: '/products/ckdu44mn40gxh010405uwgbtw',
+        description:
+          'Stwórz formularz dodawania recenzji do produktów i wywołaj odpowiednią mutację aby zapisać recenzje w GraphCMS.',
       },
     ],
   },
