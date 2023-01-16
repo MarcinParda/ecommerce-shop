@@ -13,8 +13,6 @@ const handler: NextApiHandler = async (req, res) => {
     return res.status(400).json({ message: 'Email is required' });
   }
 
-  console.log(process.env.MAILERLITE_API_KEY, process.env.MAILERLITE_GROUP_ID);
-
   if (!process.env.MAILERLITE_API_KEY || !process.env.MAILERLITE_GROUP_ID) {
     return res
       .status(500)
@@ -23,10 +21,13 @@ const handler: NextApiHandler = async (req, res) => {
 
   const options = {
     method: 'POST',
+    url: 'https://api.mailerlite.com/api/v2/groups',
+    params: { limit: '100', offset: '0', filters: 'null' },
     headers: {
-      Accept: 'application/json',
+      accept: 'application/json',
       'Content-Type': 'application/json',
       'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY,
+      'X-MailerLite-ApiDocs': 'true',
     },
     body: JSON.stringify({
       email,
