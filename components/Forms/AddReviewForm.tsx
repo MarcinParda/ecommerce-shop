@@ -42,7 +42,7 @@ export const AddReviewForm = ({ productId }: { productId: string }) => {
       reset();
       alert('Recenzja stworzona!');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

@@ -11,7 +11,7 @@ import { apolloClient } from 'graphql/apolloClient';
 import { CartItem, InferGetStaticPaths } from 'interfaces';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
-import { AddReviewForm } from './AddReviewForm';
+import { AddReviewForm } from '../../components/Forms/AddReviewForm';
 
 const ProductPage = ({
   data,
