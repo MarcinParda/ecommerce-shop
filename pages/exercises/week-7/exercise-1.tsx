@@ -1,4 +1,5 @@
 import Product from 'components/Product';
+import { ProductReviewList } from 'components/ProductReviewList';
 import {
   GetProductsListDocument,
   GetProductsListQuery,

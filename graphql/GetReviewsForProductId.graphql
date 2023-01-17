@@ -1,0 +1,15 @@
+fragment reviewContent on Review {
+  content
+  headline
+  id
+  name
+  rating
+}
+
+query GetReviewsForProductId($id: ID!) {
+  product(where: { id: $id }) {
+    reviews {
+      ...reviewContent
+    }
+  }
+}
