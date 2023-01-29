@@ -2,12 +2,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from 'components/Input';
 import { TextArea } from 'components/TextArea';
 import {
-  CreateProductReviewDocument,
-  CreateProductReviewMutation,
-  CreateProductReviewMutationVariables,
+  GetReviewsForProductIdDocument,
+  GetReviewsForProductIdQuery,
+  useCreateProductReviewMutation,
+  usePublishReviewMutation,
 } from 'generated/graphql';
-import { apolloClient } from 'graphql/apolloClient';
-import { CreateReviewFormData, FormValues } from 'interfaces';
+import { FormValues } from 'interfaces';
 import { useForm } from 'react-hook-form';
 import { createReviewFormSchema } from 'schemas/orderForm';
 
@@ -21,33 +21,70 @@ export const AddReviewForm = ({ productId }: { productId: string }) => {
     resolver: yupResolver(createReviewFormSchema),
   });
 
-  const onSubmit = async (data: CreateReviewFormData) => {
-    try {
-      const response = await apolloClient.mutate<
-        CreateProductReviewMutation,
-        CreateProductReviewMutationVariables
-      >({
-        mutation: CreateProductReviewDocument,
-        variables: {
-          review: {
-            ...data,
-            product: {
-              connect: {
-                id: productId,
-              },
+  const [publishReview] = usePublishReviewMutation({
+    variables: { id: productId },
+  });
+
+  const [createReview, { data, loading, error }] =
+    useCreateProductReviewMutation({
+      update(cache, { data }) {
+        const originalReviewsQuery =
+          cache.readQuery<GetReviewsForProductIdQuery>({
+            query: GetReviewsForProductIdDocument,
+            variables: { id: productId },
+          });
+
+        if (!originalReviewsQuery?.product || !data?.review) return;
+
+        const newReviewsQuery = {
+          ...originalReviewsQuery,
+          product: {
+            ...originalReviewsQuery.product,
+            reviews: [...originalReviewsQuery.product.reviews, data.review],
+          },
+        };
+
+        cache.writeQuery({
+          query: GetReviewsForProductIdDocument,
+          variables: { id: productId },
+          data: newReviewsQuery,
+        });
+      },
+      onCompleted: () => {
+        publishReview();
+      },
+    });
+
+  const onSubmit = handleSubmit((data) => {
+    const newData = {
+      ...data,
+      rating: Number(data.rating || '0'),
+    };
+
+    createReview({
+      variables: {
+        review: {
+          ...newData,
+          product: {
+            connect: {
+              id: productId,
             },
           },
         },
-      });
-      reset();
-      alert('Recenzja stworzona!');
-    } catch (error) {
-      console.error(error);
-    }
-  };
+      },
+      optimisticResponse: {
+        __typename: 'Mutation',
+        review: {
+          __typename: 'Review',
+          id: (-Math.random()).toString(32),
+          ...newData,
+        },
+      },
+    });
+  });
 
   return (
-    <form className="px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
+    <form className="px-8 pt-6 pb-8 mb-4" onSubmit={onSubmit}>
       <h2>Napisz recenzję</h2>
       <div className="mb-6">
         <Input
@@ -73,6 +110,16 @@ export const AddReviewForm = ({ productId }: { productId: string }) => {
           placeholder="wpisz swój email..."
           register={register}
           errorMessage={errors.email?.message}
+        />
+        <Input
+          name="rating"
+          label="Ocena"
+          type="number"
+          max={5}
+          min={1}
+          placeholder="ocena..."
+          register={register}
+          errorMessage={errors.rating?.message}
         />
         <TextArea
           name="content"

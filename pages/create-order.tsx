@@ -13,6 +13,12 @@ import { FormValues, OrderFormValues } from 'interfaces';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { orderFormSchema } from 'schemas/orderForm';
+import { loadStripe } from '@stripe/stripe-js';
+import Stripe from 'stripe';
+
+const stripePromise = loadStripe(
+  'pk_test_51MVHC7GX1kD68NcMaRFSBa1srwKQHzoPILxyxD0OK7nWEaI5BFvogKcx2N7l7rgRfa1cPKZMJLL5EK73oZ9Ne5Ve00PTaKZDzo'
+);
 
 const OrderForm = () => {
   const {
@@ -24,6 +30,33 @@ const OrderForm = () => {
     resolver: yupResolver(orderFormSchema),
   });
 
+  const pay = async (data: OrderFormValues) => {
+    const stripe = await stripePromise;
+    if (!stripe) throw new Error('Stripe not loaded');
+    if (!items) throw new Error('No items in cart');
+
+    const res = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        items.map((item) => {
+          return {
+            id: item.id,
+            count: item.count,
+          };
+        })
+      ),
+    });
+    const { session }: { session: Stripe.Response<Stripe.Checkout.Session> } =
+      await res.json();
+
+    await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+  };
+
   const { items, clearCart } = useCartState();
 
   const fullAmount = useMemo(
@@ -31,45 +64,13 @@ const OrderForm = () => {
     [items]
   );
 
-  const onSubmit = async (data: OrderFormValues) => {
-    try {
-      await apolloClient.mutate<
-        CreateOrderMutation,
-        CreateOrderMutationVariables
-      >({
-        mutation: CreateOrderDocument,
-        variables: {
-          order: {
-            email: data.email,
-            stripeCheckoutId: '123',
-            total: fullAmount,
-            orderItems: {
-              create: items?.map((item) => ({
-                quantity: item.count,
-                total: item.count * item.price,
-                product: {
-                  connect: {
-                    id: item.id as string,
-                  },
-                },
-              })),
-            },
-          },
-        },
-      });
-      clearCart();
-      reset();
-      alert('Zamówienie stworzone!');
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const onSubmit = async (data: OrderFormValues) => {};
 
   return (
     <div>
       <h1>Formularz zamówienia</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(pay)}>
         <Input
           name="email"
           label="Email"

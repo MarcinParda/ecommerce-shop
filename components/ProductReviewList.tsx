@@ -20,8 +20,6 @@ export const ProductReviewList = ({
     return <p>No reviews found</p>;
   }
 
-  console.log(data);
-
   return (
     <ul>
       {data.product.reviews.map((review) => (
@@ -36,8 +34,9 @@ interface ProductReviewItemProps {
 }
 
 const ProductReviewItem = ({ review }: ProductReviewItemProps) => {
+  const isOptimistic = review.id.startsWith('-');
   return (
-    <li>
+    <li className={`${isOptimistic ? 'opacity-50 text-gray-500' : ''}`}>
       <p>{review.content}</p>
       <p>{review.rating}</p>
     </li>

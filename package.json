@@ -13,6 +13,7 @@
     "@apollo/client": "^3.7.1",
     "@graphql-typed-document-node/core": "^3.1.1",
     "@hookform/resolvers": "^2.9.10",
+    "@stripe/stripe-js": "^1.46.0",
     "@tailwindcss/typography": "^0.5.7",
     "@tanstack/react-query": "^4.0.10",
     "axios": "^0.27.2",
@@ -21,6 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.3",
+    "stripe": "^11.8.0",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {

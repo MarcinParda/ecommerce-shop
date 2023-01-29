@@ -1,0 +1,11 @@
+query GetProductById($id: ID!) {
+  product(where: { id: $id }) {
+    id
+    name
+    price
+    name
+    images {
+      url
+    }
+  }
+}
