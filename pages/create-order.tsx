@@ -1,14 +1,7 @@
-import { TrashIcon } from '@heroicons/react/outline';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { CartContent } from 'components/CartContent';
 import { useCartState } from 'components/Header/Cart/CartContext';
 import { Input } from 'components/Input';
-import {
-  CreateOrderDocument,
-  CreateOrderMutation,
-  CreateOrderMutationVariables,
-} from 'generated/graphql';
-import { apolloClient } from 'graphql/apolloClient';
 import { FormValues, OrderFormValues } from 'interfaces';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';

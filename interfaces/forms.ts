@@ -4,6 +4,7 @@ export interface FormValues {
   headline: string;
   name: string;
   content: string;
+  password: string;
   rating?: number;
 }
 
