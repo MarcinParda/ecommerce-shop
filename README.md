@@ -1,5 +1,5 @@
 # e-commerce sandbox shop
-This is a [Next.js](https://nextjs.org/) application, that served as a sandbox for me to solve assignments/test the knowledge I had acquired from the [Modern Frontend](https://hyperfunctor.com/nextjs-react-graphql-typescript) course. It is not a finished application, it only contains elements of such. 
+This is a [Next.js](https://nextjs.org/) application, that served as a sandbox for me to solve assignments/test the knowledge I had acquired from the [Hyper Functor](https://hyperfunctor.com/nextjs-react-graphql-typescript) course. It is not a finished application, it only contains elements of such. 
 
 I did not use all the good code development practices I know in this application.
 
