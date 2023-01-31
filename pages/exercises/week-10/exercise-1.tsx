@@ -1,39 +1,23 @@
 import { Input } from 'components/Input';
-import { FormValues, MailingFormData } from 'interfaces';
+import { FormValues } from 'interfaces';
 import { useForm } from 'react-hook-form';
 import { mailingSchema } from 'schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from 'react';
+import { NewsletterForm } from 'components/NewsletterForm';
 
-const Exercise1Page = () => {
-  const [status, setStatus] = useState<'initial' | 'success' | 'error'>(
-    'initial'
-  );
+interface Exercise1PageProps {
+  onSubmit: (formData: FormValues) => Promise<void>;
+  status: 'initial' | 'success' | 'error';
+}
+
+export const Exercise1Page = ({ onSubmit, status }: Exercise1PageProps) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
   } = useForm<FormValues>({
     resolver: yupResolver(mailingSchema),
   });
-
-  const onSubmit = async (data: MailingFormData) => {
-    const response = await fetch('/api/mailing', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    if (response.ok) {
-      setStatus('success');
-      reset();
-    }
-    if (!response.ok) {
-      setStatus('error');
-    }
-  };
 
   return (
     <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -73,4 +57,4 @@ const Exercise1Page = () => {
   );
 };
 
-export default Exercise1Page;
+export default NewsletterForm;
